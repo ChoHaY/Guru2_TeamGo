@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "891593712978",
+    "project_id": "guru-project-fd8e2",
+    "storage_bucket": "guru-project-fd8e2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891593712978:android:7d45106f02f55ade9e868b",
+        "android_client_info": {
+          "package_name": "net.flow9.thisisKotlin.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "891593712978-91asklu3uq6aau48cboc80bqmm5kmt4p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqII-d8NE7pTlVpfQxw-wwK8L8PwjEIU0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "891593712978-91asklu3uq6aau48cboc80bqmm5kmt4p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
