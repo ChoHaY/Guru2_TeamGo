@@ -4,13 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
-import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
 import net.flow9.thisisKotlin.firebase.R
 
 class TodayProject : AppCompatActivity() {
 
-    lateinit var Email: TextView
+    //lateinit var Email: TextView
     lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +18,7 @@ class TodayProject : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
-        var addProject : ImageButton = findViewById(R.id.add_list)
+        var addProject : ImageButton = findViewById(R.id.AddList_btn)
 
         addProject.setOnClickListener{
             val intent = Intent(this, AddProject_name::class.java)

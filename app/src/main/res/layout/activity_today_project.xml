@@ -7,7 +7,7 @@
     android:backgroundTint="@color/white">
 
     <TextView
-        android:id="@+id/nolist_tx"
+        android:id="@+id/Nolist_tv"
         android:layout_width="357dp"
         android:layout_height="70dp"
         android:layout_marginStart="16dp"
@@ -19,35 +19,35 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/account" />
+        app:layout_constraintTop_toBottomOf="@+id/Account_btn" />
 
     <ImageButton
-        android:id="@+id/recommand_bt"
+        android:id="@+id/Recommand_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="55dp"
         android:layout_marginBottom="1dp"
         android:backgroundTint="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/recommand_tx"
+        app:layout_constraintBottom_toTopOf="@+id/Recommand_btn_tv"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/home_bt"
-        app:srcCompat="@drawable/ic_baseline_thumb_up_24" />
+        app:layout_constraintStart_toEndOf="@+id/Home_btn"
+        app:srcCompat="@drawable/vec_recommand" />
 
     <ImageButton
-        android:id="@+id/home_bt"
+        android:id="@+id/Home_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="55dp"
         android:layout_marginEnd="155dp"
         android:layout_marginBottom="1dp"
         android:backgroundTint="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/home_tx"
-        app:layout_constraintEnd_toStartOf="@+id/recommand_bt"
+        app:layout_constraintBottom_toTopOf="@+id/Home_btn_tv"
+        app:layout_constraintEnd_toStartOf="@+id/Recommand_btn"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_baseline_home_24" />
+        app:srcCompat="@drawable/vec_home" />
 
     <TextView
-        android:id="@+id/home_tx"
+        android:id="@+id/Home_btn_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="70dp"
@@ -57,7 +57,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/recommand_tx"
+        android:id="@+id/Recommand_btn_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="50dp"
@@ -67,18 +67,18 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageButton
-        android:id="@+id/add_list"
+        android:id="@+id/AddList_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="470dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/account"
-        app:srcCompat="@drawable/ic_baseline_add_circle_24" />
+        app:layout_constraintTop_toBottomOf="@+id/Account_btn"
+        app:srcCompat="@drawable/vec_add_empty" />
 
     <ImageButton
-        android:id="@+id/account"
+        android:id="@+id/Account_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -86,7 +86,7 @@
         android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+        app:srcCompat="@drawable/vec_myaccount" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

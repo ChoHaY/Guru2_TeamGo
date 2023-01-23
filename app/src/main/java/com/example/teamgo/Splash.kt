@@ -12,14 +12,14 @@ class Splash : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        // 일정 시간 지연 후 실행
+        // 일정 시간 후 실행 함수
         Handler(Looper.getMainLooper()).postDelayed({
 
-            // 일정 시간 지연 후 MainActivity로 이동
+            // 2초 후 로그인 화면으로 이동
             val intent = Intent(this, Login::class.java)
-            startActivity((intent))
-
+            startActivity(intent)
             finish()
+
         } ,2000)
     }
 }

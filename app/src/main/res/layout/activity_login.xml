@@ -7,7 +7,7 @@
     tools:context="com.example.teamgo.Login">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/Login_logo_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="115dp"
@@ -29,10 +29,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/Login_logo_tv" />
 
     <EditText
-        android:id="@+id/Inputpassword"
+        android:id="@+id/InputPassword"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -44,7 +44,7 @@
         app:layout_constraintTop_toBottomOf="@+id/InputEmail" />
 
     <CheckBox
-        android:id="@+id/AuthLogiin"
+        android:id="@+id/AuthLogin_check"
         android:layout_width="99dp"
         android:layout_height="40dp"
         android:layout_marginStart="20dp"
@@ -56,18 +56,7 @@
         app:layout_constraintVertical_bias="0.44" />
 
     <Button
-        android:id="@+id/LoginRegbtn"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="314dp"
-        android:text="로그인/회원가입"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/LoginInfoSearchbtn"
+        android:id="@+id/SearchInfor_btn"
         android:layout_width="175dp"
         android:layout_height="42dp"
         android:layout_marginStart="110dp"
@@ -77,8 +66,22 @@
         android:text="아이디/비밀번호 찾기"
         android:textColor="#000000"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/LoginRegbtn"
+        app:layout_constraintBottom_toTopOf="@+id/Login_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.44"
-        app:layout_constraintStart_toEndOf="@+id/AuthLogiin" />
+        app:layout_constraintStart_toEndOf="@+id/AuthLogin_check" />
+
+    <Button
+        android:id="@+id/Login_btn"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="314dp"
+        android:backgroundTint="@color/mainBlue"
+        android:text="로그인/회원가입"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,9 +12,9 @@ import net.flow9.thisisKotlin.firebase.R
 import java.util.*
 
 class Login : AppCompatActivity() {
-    lateinit var edtEmail: EditText  //이메일 적는 구간
-    lateinit var edtPassword: EditText //비밀번호 적는 구간
-    lateinit var LoginRegbtn: Button //버튼
+    lateinit var putEmail: EditText
+    lateinit var putPassword: EditText
+    lateinit var Loginbtn: Button
     lateinit var auth: FirebaseAuth
 
     @SuppressLint("MissingInflatedId")
@@ -24,14 +24,15 @@ class Login : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
-        edtEmail = findViewById(R.id.InputEmail)
-        edtPassword = findViewById(R.id.Inputpassword)
-        LoginRegbtn = findViewById(R.id.LoginRegbtn)
+        putEmail = findViewById(R.id.InputEmail)
+        putPassword = findViewById(R.id.InputPassword)
+        Loginbtn = findViewById(R.id.Login_btn)
 
-        LoginRegbtn.setOnClickListener {
-            var Email = edtEmail.text.toString()
-            var Password = edtPassword.text.toString()
-            auth.createUserWithEmailAndPassword(Email, Password) // 회원 가입
+        Loginbtn.setOnClickListener {
+            var Email = putEmail.text.toString()
+            var Password = putPassword.text.toString()
+
+            auth.createUserWithEmailAndPassword(Email, Password)
                 .addOnCompleteListener { result ->
                     if (result.isSuccessful) {
                         Toast.makeText(this, "회원가입이 완료되었습니다.", Toast.LENGTH_SHORT).show()
@@ -44,11 +45,11 @@ class Login : AppCompatActivity() {
                     } else {
                         login(Email.toString(), Password.toString())
                     }
-                }
+            }
         }
             auth = FirebaseAuth.getInstance()
-            var currentUser = auth?.currentUser
-            //이미 로그인한적이 있는지 확인합니다.
+            var currentUser = auth?.currentUser //이미 로그인한적이 있는지 확인합니다.
+
             if (currentUser == null) {
                 Timer().schedule(object : TimerTask() {
                     override fun run() {
@@ -56,7 +57,7 @@ class Login : AppCompatActivity() {
                         startActivity(intent)
                         finish()
                     }
-                }, 2000)
+                }, 1500)
             } else {
                 Timer().schedule(object : TimerTask() {
                     override fun run() {
@@ -64,18 +65,17 @@ class Login : AppCompatActivity() {
                         startActivity(intent)
                         finish()
                     }
-                }, 2000)
+                }, 1500)
             }
-        }
-        fun login(Email: String, Password: String) {
-            auth.signInWithEmailAndPassword(Email, Password) // 로그인
-                .addOnCompleteListener { result ->
-                    if (result.isSuccessful) {
-                        var intent = Intent(
-                            this,
-                            TodayProject::class.java
-                        ) //MainActivity가 아닌 '오늘의 일정'으로 넘어가는 Activity이름으로 바꾸어야 함
-                        startActivity(intent)
-                    }
-                } }
     }
+    fun login(Email: String, Password: String) {
+        auth.signInWithEmailAndPassword(Email, Password) // 로그인
+             .addOnCompleteListener { result ->
+              if (result.isSuccessful) {
+                  Toast.makeText(this, "로그인 완료", Toast.LENGTH_SHORT).show()
+                  var intent = Intent(this, TodayProject::class.java)
+                  startActivity(intent)
+              }
+        }
+    }
+}

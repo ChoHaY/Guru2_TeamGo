@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     android:background="#215FFF"
     android:backgroundTint="#215FFF"
-    tools:context=".Splash">
+    tools:context="com.example.teamgo.Splash">
 
     <TextView
-        android:id="@+id/StartText"
+        android:id="@+id/Intro_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="65dp"
@@ -24,7 +24,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/subStartText"
+        android:id="@+id/Splash_logo_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="66dp"
@@ -37,6 +37,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/StartText" />
+        app:layout_constraintTop_toBottomOf="@+id/Intro_tv" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

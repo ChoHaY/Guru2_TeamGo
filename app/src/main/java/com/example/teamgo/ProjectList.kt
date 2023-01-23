@@ -40,7 +40,7 @@ class ProjectList : AppCompatActivity() {
             layout_item.addView(tvDate)
 
             layout_item.setOnClickListener {
-                val intent = Intent(this, Projectplan::class.java)
+                //val intent = Intent(this, Projectplan::class.java)
                 intent.putExtra("intent_name",str_name)
                 startActivity(intent)
             }
