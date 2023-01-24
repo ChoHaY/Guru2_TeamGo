@@ -2,6 +2,7 @@ package com.example.teamgo
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.database.sqlite.SQLiteDatabase
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,9 +14,10 @@ import android.widget.ImageButton
 import net.flow9.thisisKotlin.firebase.R
 
 class AddProject_name : AppCompatActivity() {
+
     lateinit var Backbtn : ImageButton
-    lateinit var RegName : EditText
     lateinit var Nextbtn : Button
+    lateinit var RegName : EditText
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +27,6 @@ class AddProject_name : AppCompatActivity() {
         Backbtn = findViewById(R.id.Back_btn)
         RegName = findViewById(R.id.InputName)
         Nextbtn = findViewById(R.id.Next_btn)
-
         Nextbtn.isEnabled = false
 
         Backbtn.setOnClickListener {
@@ -50,6 +51,7 @@ class AddProject_name : AppCompatActivity() {
 
         Nextbtn.setOnClickListener {
             val intent = Intent(this, AddProject_date::class.java)
+            intent.putExtra("name",RegName.text.toString())
             startActivity(intent)
         }
     }
