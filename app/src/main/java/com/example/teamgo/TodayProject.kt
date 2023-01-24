@@ -39,9 +39,6 @@ class TodayProject : AppCompatActivity() {
         sqlitedb = dbManager.readableDatabase
         layout = findViewById(R.id.personnel)
 
-        //detail = findViewById(R.id.Detail_btn)
-        //detail.visibility = View.INVISIBLE
-
         var cursor : Cursor
         cursor = sqlitedb.rawQuery("SELECT * FROM projectlist;",null)
         var num: Int = 0
@@ -54,12 +51,12 @@ class TodayProject : AppCompatActivity() {
 
             var pjName: TextView = TextView(this)
             pjName.text = str_name
-            pjName.textSize = 30f
+            pjName.textSize = 20f
             layout_item.addView(pjName)
 
             var pjDate: TextView = TextView(this)
             pjDate.text = str_date
-            pjDate.textSize = 30f
+            pjDate.textSize = 15f
             layout_item.addView(pjDate)
 
             Nolist.visibility = View.GONE

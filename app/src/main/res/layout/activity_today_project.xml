@@ -82,7 +82,7 @@
         android:layout_height="508dp"
         android:layout_marginTop="124dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -90,11 +90,13 @@
             android:id="@+id/personnel"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="20dp"
             android:orientation="vertical"
-            android:paddingLeft="16dp"
-            android:paddingTop="100dp"
+            android:paddingLeft="40dp"
+            android:paddingTop="16dp"
             android:paddingRight="16dp"
-            android:paddingBottom="16dp" />
+            android:paddingBottom="16dp"
+            />
 
     </ScrollView>
 
