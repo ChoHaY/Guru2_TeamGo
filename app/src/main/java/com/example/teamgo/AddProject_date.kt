@@ -35,7 +35,6 @@ class AddProject_date : AppCompatActivity() {
         DateView = findViewById(R.id.InputDate)
         SelectDate = findViewById(R.id.SelectDate_btn)
 
-
         Backbtn.setOnClickListener {
             val intent = Intent(this,AddProject_name::class.java)
             startActivity(intent)
