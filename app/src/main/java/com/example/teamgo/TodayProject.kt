@@ -73,6 +73,12 @@ class TodayProject : AppCompatActivity() {
             detail.setBackgroundColor(Color.WHITE)
             detail.setPadding(0,10,0,0)
             detail.foregroundGravity
+            detail.setOnClickListener{
+                val intent = Intent(this,TodoList::class.java)
+                intent.putExtra("intent_PJ_name",str_name)
+                intent.putExtra("intent_PJ_date",str_date)
+                startActivity(intent)
+            }
             layout_semi.addView(detail)
 
             layout_item.addView(layout_semi)
