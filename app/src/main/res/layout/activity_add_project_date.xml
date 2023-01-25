@@ -55,7 +55,7 @@
         android:id="@+id/SelectDate_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="150dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="484dp"
         android:backgroundTint="#00FFFFFF"
@@ -64,7 +64,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/InputDate"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.518"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/vec_calendar"
         tools:ignore="SpeakableTextPresentCheck" />
 
