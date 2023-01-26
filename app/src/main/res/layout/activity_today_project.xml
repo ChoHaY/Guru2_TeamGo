@@ -124,16 +124,5 @@
         app:layout_constraintTop_toBottomOf="@+id/Account_btn"
         app:srcCompat="@drawable/vec_add_empty" />
 
-    <ImageButton
-        android:id="@+id/invitation_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Account_btn"
-        app:srcCompat="@drawable/ic_baseline_person_add_24" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
