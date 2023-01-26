@@ -91,7 +91,7 @@ class TodoList() : AppCompatActivity(){
 
                 var add: ImageButton = ImageButton(this)
                 add.setImageResource(R.drawable.vec_add_schedule)
-                add.setPadding(0,5,0,0)
+                add.setPadding(10,5,0,0)
                 add.setBackgroundColor(Color.WHITE)
                 layout_semi.addView(add)
 
@@ -102,8 +102,8 @@ class TodoList() : AppCompatActivity(){
                 pjdo.setBackgroundColor(Color.LTGRAY)
                 pjdo.setPadding(0,10,0,10)
                 layout_item.addView(pjdo)
-                layout_item.setPadding(0,0,0,40)
 
+                layout_item.setPadding(0,0,0,40)
                 layout.addView(layout_item)
             }
         }

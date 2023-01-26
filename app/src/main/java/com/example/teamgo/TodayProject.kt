@@ -82,7 +82,7 @@ class TodayProject : AppCompatActivity() {
             var pjDate: TextView = TextView(this)
             pjDate.text = str_date
             pjDate.textSize = 15f
-            pjDate.setPadding(0, 0, 0, 25)
+            pjDate.setPadding(0, 0, 0, 30)
             layout_item.addView(pjDate)
 
             Nolist.visibility = View.GONE
