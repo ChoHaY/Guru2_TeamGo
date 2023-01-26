@@ -36,17 +36,17 @@ class TodayProject : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         addProject = findViewById(R.id.AddList_btn)
 
-        dbManager = DBManager(this, "projectlistDB", null, 1)
+        dbManager = DBManager(this, "projectlist_DB", null, 1)
         sqlitedb = dbManager.readableDatabase
         layout = findViewById(R.id.personnel)
 
         var cursor: Cursor
-        cursor = sqlitedb.rawQuery("SELECT * FROM projectlist;", null)
+        cursor = sqlitedb.rawQuery("SELECT * FROM projectlist_;", null)
         var num1: Int = 0
         var num2: Int = 0
         while (cursor.moveToNext()) {
-            var str_name = cursor.getString(cursor.getColumnIndex("PJName")).toString()
-            var str_date = cursor.getString(cursor.getColumnIndex("PJDate")).toString()
+            var str_name = cursor.getString(cursor.getColumnIndex("PJname")).toString()
+            var str_date = cursor.getString(cursor.getColumnIndex("PJdate")).toString()
             var layout_semi: LinearLayout = LinearLayout(this)
             var layout_item: LinearLayout = LinearLayout(this)
 

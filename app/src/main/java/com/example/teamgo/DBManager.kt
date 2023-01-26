@@ -9,7 +9,7 @@ class DBManager(
     SQLiteOpenHelper(context, name , factory, version){
 
     override fun onCreate(db: SQLiteDatabase?) {
-        db!!.execSQL("CREATE TABLE projectlist (PJName text, PJDate text)")
+        db!!.execSQL("CREATE TABLE projectlist_ (PJname text, PJdate text, PJgap text)")
     }
 
     fun onCreate2(db: SQLiteDatabase){

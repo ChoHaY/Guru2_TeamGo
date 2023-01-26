@@ -42,23 +42,25 @@ class TodoList() : AppCompatActivity(){
             startActivity(intent)
         }
 
-        dbManager = DBManager(this,"projectlistDB", null, 1)
+        dbManager = DBManager(this,"projectlist_DB", null, 1)
         sqlitedb = dbManager.readableDatabase
 
         val intent = intent
         var str_name: String
         var str_date: String
+        var str_days: String
 
         str_name = intent.getStringExtra("intent_PJ_name").toString()
+        str_days = intent.getStringExtra("date_interval").toString()
 
         var cursor: Cursor
-        cursor = sqlitedb.rawQuery("SELECT * FROM projectlist WHERE PJName ='"+str_name+"';",null)
+        cursor = sqlitedb.rawQuery("SELECT * FROM projectlist_ WHERE PJname ='"+str_name+"';",null)
 
         if(cursor.moveToNext()){
             str_date = intent.getStringExtra("intent_PJ_date").toString()
 
             pjname = findViewById(R.id.project_name3)
-            pjname.text = str_name
+            pjname.text = str_name+str_days
             pjname.setTextColor(Color.BLACK)
 
             pjdate = findViewById(R.id.allday)
@@ -76,9 +78,9 @@ class TodoList() : AppCompatActivity(){
             builder.setTitle("프로젝트 삭제")
                 .setMessage("프로젝트를 삭제하시겠습니까?")
                 .setPositiveButton("예",DialogInterface.OnClickListener{dialog, which->
-                    dbManager = DBManager(this,"projectlistDB", null, 1)
+                    dbManager = DBManager(this,"projectlist_DB", null, 1)
                     sqlitedb = dbManager.readableDatabase
-                    sqlitedb.execSQL("DELETE FROM projectlist WHERE PJName ='"+str_name+"';")
+                    sqlitedb.execSQL("DELETE FROM projectlist_ WHERE PJName ='"+str_name+"';")
                     sqlitedb.close()
                     dbManager.close()
 
@@ -100,6 +102,7 @@ class TodoList() : AppCompatActivity(){
             share(message)
         }
     }
+
     @SuppressLint("QueryPermissionsNeeded")
     fun share(content: String) {
         val intent = Intent(Intent.ACTION_SEND) // 공유하는 인텐트 생성
@@ -113,4 +116,4 @@ class TodoList() : AppCompatActivity(){
             Toast.makeText(this, "초대 메세지를 전송할 수 없습니다", Toast.LENGTH_LONG).show()
         }
     }
-    }
+}

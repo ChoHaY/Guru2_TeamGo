@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
@@ -22,6 +23,7 @@ class AddProject_date : AppCompatActivity() {
     lateinit var DateView: EditText
     lateinit var SelectDate: ImageButton
     lateinit var Nextbtn : Button
+    lateinit var days : EditText
 
     lateinit var dbManager: DBManager
     lateinit var sqlitedb : SQLiteDatabase
@@ -34,6 +36,7 @@ class AddProject_date : AppCompatActivity() {
         Backbtn = findViewById(R.id.Back_btn2)
         DateView = findViewById(R.id.InputDate)
         SelectDate = findViewById(R.id.SelectDate_btn)
+        days= findViewById(R.id.editview)
 
         Backbtn.setOnClickListener {
             val intent = Intent(this,AddProject_name::class.java)
@@ -55,15 +58,13 @@ class AddProject_date : AppCompatActivity() {
                 val endDate = SimpleDateFormat("yyyy.MM.dd").format(calendar.time).toString()
                 val last = calendar.timeInMillis
 
+                val gap1 = (last-first)/100000
+                val gap2 = gap1/(6*6*24*1)+1
                 DateView.setText("$startDate  ㅡ  $endDate")
-                val gap = (last-first)/100000
-                val interval = (gap/(6*6*24*1))+1
-
-                val intent = Intent(this, TodoList::class.java)
-                intent.putExtra("date_interval",interval)
-                startActivity(intent)
+                days.setText("$gap2")
             }
         }
+        days.visibility = View.INVISIBLE
         ////////////////////////////////////////////////////////////////////////
 
         Nextbtn = findViewById(R.id.Next_btn)
@@ -84,19 +85,21 @@ class AddProject_date : AppCompatActivity() {
             override fun afterTextChanged(p0: Editable?) {}
         })
 
-        dbManager = DBManager(this,"projectlistDB", null, 1)
+        dbManager = DBManager(this,"projectlist_DB", null, 1)
 
         Nextbtn.setOnClickListener {
             var str_name : String = intent.getStringExtra("name").toString()
             var str_date : String = DateView.text.toString()
+            var interval : String = days.text.toString()
 
             sqlitedb = dbManager.writableDatabase
-            sqlitedb.execSQL("INSERT INTO projectlist VALUES('"+ str_name + "','"+str_date+"');")
+            sqlitedb.execSQL("INSERT INTO projectlist_ VALUES('"+ str_name + "','"+str_date+"','"+interval+"');")
             sqlitedb.close()
 
             val intent = Intent(this, TodoList::class.java)
             intent.putExtra("intent_PJ_name",str_name)
             intent.putExtra("intent_PJ_date",str_date)
+            intent.putExtra("date_interval",interval)
             startActivity(intent)
         }
     }
