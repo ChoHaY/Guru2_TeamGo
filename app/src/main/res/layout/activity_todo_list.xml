@@ -5,58 +5,78 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/allday"
-        android:layout_width="wrap_content"
-        android:layout_height="25dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginBottom="8dp"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/date1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/project_name3" />
-
     <ImageButton
         android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="282dp"
-        android:layout_marginBottom="16dp"
         android:backgroundTint="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/project_name3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/vec_back" />
+        app:srcCompat="@drawable/vec_back"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/DeletePj_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="32dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/project_name3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/back"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/vec_delet"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/project_name3"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
         android:layout_marginEnd="190dp"
-        android:layout_marginBottom="10dp"
-        android:textSize="30sp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/allday"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/back" />
 
+
     <TextView
-        android:id="@+id/date1"
-        android:layout_width="154dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="10dp"
-        android:textSize="20sp"
+        android:id="@+id/allday"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginBottom="6dp"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/Member"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/project_name3" />
+
+    <TextView
+        android:id="@+id/Member"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="@color/mainBlue"
+        android:padding="10dp"
+        android:text="프로젝트 팀원"
+        android:textColor="@color/white"
+        android:textSize="14dp"
         app:layout_constraintBottom_toTopOf="@+id/scrollView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.122"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/allday" />
-
 
     <ScrollView
         android:id="@+id/scrollView3"
@@ -67,78 +87,35 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.782">
+        app:layout_constraintVertical_bias="0.67"
+        tools:ignore="SpeakableTextPresentCheck">
 
         <LinearLayout
             android:id="@+id/personnel"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingLeft="16dp"
-            android:paddingTop="0dp"
-            android:paddingRight="16dp"
-            android:paddingBottom="16dp">
-
-            <TextView
-                android:id="@+id/doit"
-                android:layout_width="340dp"
-                android:layout_height="wrap_content"
-                android:paddingTop="40dp"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/memo"
-                android:layout_width="340dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/manager"
-                android:layout_width="340dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent" />
-
-        </LinearLayout>
+            android:layout_width="312dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/white"
+            android:orientation="vertical"/>
 
     </ScrollView>
-
-    <ImageButton
-        android:id="@+id/DeletePj_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="26dp"
-        android:layout_marginBottom="188dp"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/back"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/vec_delet" />
-
-
-    <ImageButton
-        android:id="@+id/addtodo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="12dp"
-        android:backgroundTint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DeletePj_btn"
-        app:srcCompat="@drawable/vec_add_circle_outline" />
 
     <ImageButton
         android:id="@+id/invitation_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="18dp"
-        android:backgroundTint="#FFFFFF"
+        android:layout_marginEnd="26dp"
+        android:backgroundTint="#00FFFFFF"
+        android:translationY="-2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DeletePj_btn"
-        app:srcCompat="@drawable/ic_baseline_person_add_24" />
+        app:layout_constraintHorizontal_bias="0.355"
+        app:layout_constraintStart_toStartOf="@+id/Member"
+        app:layout_constraintTop_toBottomOf="@+id/allday"
+        app:layout_constraintVertical_bias="0.032"
+        app:srcCompat="@drawable/ic_baseline_person_add_24"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

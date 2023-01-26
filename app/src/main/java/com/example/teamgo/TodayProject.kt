@@ -47,6 +47,7 @@ class TodayProject : AppCompatActivity() {
         while (cursor.moveToNext()) {
             var str_name = cursor.getString(cursor.getColumnIndex("PJname")).toString()
             var str_date = cursor.getString(cursor.getColumnIndex("PJdate")).toString()
+            var str_mem = cursor.getString(cursor.getColumnIndex("PJgap")).toString()
             var layout_semi: LinearLayout = LinearLayout(this)
             var layout_item: LinearLayout = LinearLayout(this)
 
@@ -71,6 +72,7 @@ class TodayProject : AppCompatActivity() {
                 val intent = Intent(this, TodoList::class.java)
                 intent.putExtra("intent_PJ_name", str_name)
                 intent.putExtra("intent_PJ_date", str_date)
+                intent.putExtra("date_interval",str_mem)
                 startActivity(intent)
             }
             layout_semi.addView(detail)
