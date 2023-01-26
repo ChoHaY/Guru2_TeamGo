@@ -74,6 +74,8 @@ class TodoList() : AppCompatActivity(){
 
             pjmem =findViewById(R.id.Member)
 
+
+
             for(day in 1 until num){
                 var layout_item: LinearLayout = LinearLayout(this)
                 var layout_semi: LinearLayout = LinearLayout(this)
@@ -142,6 +144,9 @@ class TodoList() : AppCompatActivity(){
             val message = "팀 계획을 짜고 싶다고?? 당신을 '팀 고'로 초대합니다! ~\n\nhttps://naver.com"
             share(message)
         }
+
+
+
     }
 
     @SuppressLint("QueryPermissionsNeeded")
