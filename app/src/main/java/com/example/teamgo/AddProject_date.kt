@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import android.graphics.Color
+import android.icu.text.SimpleDateFormat
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -11,9 +12,9 @@ import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
-import android.widget.TextView
 import com.google.android.material.datepicker.MaterialDatePicker
 import net.flow9.thisisKotlin.firebase.R
+import java.util.*
 
 class AddProject_date : AppCompatActivity() {
 
@@ -21,7 +22,6 @@ class AddProject_date : AppCompatActivity() {
     lateinit var DateView: EditText
     lateinit var SelectDate: ImageButton
     lateinit var Nextbtn : Button
-    lateinit var getName : String
 
     lateinit var dbManager: DBManager
     lateinit var sqlitedb : SQLiteDatabase
@@ -44,9 +44,27 @@ class AddProject_date : AppCompatActivity() {
             val datePicker = MaterialDatePicker.Builder.dateRangePicker().setTitleText("팀플 기간을 골라주세요").build()
             datePicker.show(supportFragmentManager, "DatePicker")
             datePicker.addOnPositiveButtonClickListener {
-                DateView.setText(datePicker.headerText)
+
+                val calendar = Calendar.getInstance()
+
+                calendar.timeInMillis = it?.first ?: 0
+                val startDate = SimpleDateFormat("yyyy.MM.dd").format(calendar.time).toString()
+                val first = calendar.timeInMillis
+
+                calendar.timeInMillis = it?.second ?: 0
+                val endDate = SimpleDateFormat("yyyy.MM.dd").format(calendar.time).toString()
+                val last = calendar.timeInMillis
+
+                DateView.setText("$startDate  ㅡ  $endDate")
+                val gap = (last-first)/100000
+                val interval = (gap/(6*6*24*1))+1
+
+                val intent = Intent(this, TodoList::class.java)
+                intent.putExtra("date_interval",interval)
+                startActivity(intent)
             }
         }
+        ////////////////////////////////////////////////////////////////////////
 
         Nextbtn = findViewById(R.id.Next_btn)
         Nextbtn.isEnabled = false
@@ -76,7 +94,9 @@ class AddProject_date : AppCompatActivity() {
             sqlitedb.execSQL("INSERT INTO projectlist VALUES('"+ str_name + "','"+str_date+"');")
             sqlitedb.close()
 
-            val intent = Intent(this, TodayProject::class.java)
+            val intent = Intent(this, TodoList::class.java)
+            intent.putExtra("intent_PJ_name",str_name)
+            intent.putExtra("intent_PJ_date",str_date)
             startActivity(intent)
         }
     }

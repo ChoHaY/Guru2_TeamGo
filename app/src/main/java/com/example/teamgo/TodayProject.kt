@@ -22,7 +22,6 @@ import net.flow9.thisisKotlin.firebase.R
 
 class TodayProject : AppCompatActivity() {
 
-    //lateinit var Email: TextView
     lateinit var auth: FirebaseAuth
     lateinit var Nolist: TextView
     lateinit var addProject : ImageButton
@@ -30,7 +29,6 @@ class TodayProject : AppCompatActivity() {
     lateinit var dbManager: DBManager
     lateinit var sqlitedb : SQLiteDatabase
     lateinit var layout: LinearLayout
-    lateinit var semilayout: LinearLayout
 
     @RequiresApi(Build.VERSION_CODES.Q)
     @SuppressLint("Range", "MissingInflatedId")

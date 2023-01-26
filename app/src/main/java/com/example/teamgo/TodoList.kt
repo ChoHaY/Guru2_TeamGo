@@ -8,19 +8,14 @@ import android.database.sqlite.SQLiteDatabase
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Parcel
-import android.os.Parcelable
-import android.view.ContextThemeWrapper
-import android.view.View
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import net.flow9.thisisKotlin.firebase.R
-
-class TodoList() : AppCompatActivity(){
+class TodoList() : AppCompatActivity() {
 
     lateinit var dbManager: DBManager
-    lateinit var sqlitedb : SQLiteDatabase
+    lateinit var sqlitedb: SQLiteDatabase
 
     lateinit var pjname: TextView
     lateinit var pjdate: TextView
@@ -36,12 +31,12 @@ class TodoList() : AppCompatActivity(){
         pjdate = findViewById(R.id.date1)
         back = findViewById(R.id.back)
 
-        back.setOnClickListener{
-            val intent = Intent(this,TodayProject::class.java)
+        back.setOnClickListener {
+            val intent = Intent(this, TodayProject::class.java)
             startActivity(intent)
         }
 
-        dbManager = DBManager(this,"projectlistDB", null, 1)
+        dbManager = DBManager(this, "projectlistDB", null, 1)
         sqlitedb = dbManager.readableDatabase
 
         val intent = intent
@@ -51,9 +46,10 @@ class TodoList() : AppCompatActivity(){
         str_name = intent.getStringExtra("intent_PJ_name").toString()
 
         var cursor: Cursor
-        cursor = sqlitedb.rawQuery("SELECT * FROM projectlist WHERE PJName ='"+str_name+"';",null)
+        cursor =
+            sqlitedb.rawQuery("SELECT * FROM projectlist WHERE PJName ='" + str_name + "';", null)
 
-        if(cursor.moveToNext()){
+        if (cursor.moveToNext()) {
             str_date = intent.getStringExtra("intent_PJ_date").toString()
 
             pjname = findViewById(R.id.project_name3)
@@ -70,21 +66,21 @@ class TodoList() : AppCompatActivity(){
         //////////////////////////////////////////////
 
         delete = findViewById(R.id.DeletePj_btn)
-        delete.setOnClickListener{
+        delete.setOnClickListener {
             val builder = AlertDialog.Builder(this)
             builder.setTitle("프로젝트 삭제")
                 .setMessage("프로젝트를 삭제하시겠습니까?")
-                .setPositiveButton("예",DialogInterface.OnClickListener{dialog, which->
-                    dbManager = DBManager(this,"projectlistDB", null, 1)
+                .setPositiveButton("예", DialogInterface.OnClickListener { dialog, which ->
+                    dbManager = DBManager(this, "projectlistDB", null, 1)
                     sqlitedb = dbManager.readableDatabase
-                    sqlitedb.execSQL("DELETE FROM projectlist WHERE PJName ='"+str_name+"';")
+                    sqlitedb.execSQL("DELETE FROM projectlist WHERE PJName ='" + str_name + "';")
                     sqlitedb.close()
                     dbManager.close()
 
-                    val intent = Intent(this,TodayProject::class.java)
+                    val intent = Intent(this, TodayProject::class.java)
                     startActivity(intent)
                 })
-                .setNegativeButton("아니오",DialogInterface.OnClickListener{dialog, which->
+                .setNegativeButton("아니오", DialogInterface.OnClickListener { dialog, which ->
                     builder.setOnDismissListener(object : DialogInterface.OnDismissListener {
                         override fun onDismiss(arg0: DialogInterface) {}
                     })
@@ -94,3 +90,7 @@ class TodoList() : AppCompatActivity(){
         }
     }
 }
+
+
+
+
