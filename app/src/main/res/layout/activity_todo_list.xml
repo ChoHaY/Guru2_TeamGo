@@ -116,7 +116,8 @@
         app:layout_constraintStart_toEndOf="@+id/back"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/vec_delet" />
-    
+
+
     <ImageButton
         android:id="@+id/addtodo"
         android:layout_width="wrap_content"

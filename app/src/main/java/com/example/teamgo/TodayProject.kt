@@ -9,11 +9,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.EditText
-import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
+import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.core.view.marginBottom
 import androidx.core.view.setPadding
@@ -100,5 +96,27 @@ class TodayProject : AppCompatActivity() {
             val intent = Intent(this, AddProject_name::class.java)
             startActivity(intent)
         }
+
+        findViewById<ImageButton>(R.id.invitation_btn).setOnClickListener {
+
+            val message = "팀 계획을 짜고 싶다고?? 당신을 '팀 고'로 초대합니다! ~\n\nhttps://naver.com"
+            share(message)
+        }
+    }
+    @SuppressLint("QueryPermissionsNeeded")
+    fun share(content: String) {
+        val intent = Intent(Intent.ACTION_SEND) // 공유하는 인텐트 생성
+            .apply {
+                type = "text/plain" // 데이터 타입 설정
+                putExtra(Intent.EXTRA_TEXT, content) // 보낼 내용 설정
+            }
+        if (intent.resolveActivity(packageManager) != null) {
+            startActivity(Intent.createChooser(intent, "초대 메세지 보내기"))
+        } else {
+            Toast.makeText(this, "초대 메세지를 전송할 수 없습니다", Toast.LENGTH_LONG).show()
+        }
     }
 }
+
+
+
