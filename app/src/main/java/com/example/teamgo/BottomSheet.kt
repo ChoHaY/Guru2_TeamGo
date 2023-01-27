@@ -27,15 +27,16 @@ class BottomSheet(context: Context): BottomSheetDialogFragment() {
 
         super.onActivityCreated(savedInstanceState)
         view?.findViewById<TextView>(R.id.bottom_sheet)?.setOnClickListener {
-            Toast.makeText(context, "Bottom Sheet 안의 버튼 클릭", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "메모작성 클릭", Toast.LENGTH_SHORT).show()
             dismiss()
-            //dialog = BottomSheet(this)
+            //val dialog = BottomSheet(this)
             //dialog.showDialog()
-            //dialog.setOnClickListener(object : CustomDialogActivity2.OnDialogClickListener {
-            //override fun onClicked(name: String) {
-            // bottom_sheet.text = name
-            //}
-            // })
+            //dialog.setOnClickListener(object : TodoMemo.OnDialogClickListener {
+               // override fun onClicked(name: String) {
+                   // pjdo.text = name
+               // }
+           // })
+       // }
         }
 
     }
