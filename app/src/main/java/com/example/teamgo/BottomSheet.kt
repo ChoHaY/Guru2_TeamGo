@@ -3,6 +3,7 @@ package com.example.teamgo
 import android.app.Dialog
 import android.content.Context
 import android.content.Intent
+import android.graphics.drawable.ClipDrawable.VERTICAL
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -32,18 +33,13 @@ class BottomSheet(context: Context): BottomSheetDialogFragment() {
         bottom_sheet.setOnClickListener {
             Toast.makeText(context, "메모작성 클릭", Toast.LENGTH_SHORT).show()
             dismiss()
-//                val dialog = WriteMemo(this)
-//                dialog.showDialog()
-//                dialog.setOnClickListener(object : WriteMemo.OnDialogClickListener {
-//                    override fun onClicked(name: String) {
-//                        bottom_sheet.text = name
-//                    }
-//                })
-
-//            val dialog = new Dialog(WriteMemo())
-//            dialog.setContentView(R.layout.activity_writememo)
-//            dialog.show()
-
+            val dialog = WriteMemo(requireContext())
+            dialog.showDialog()
+            dialog.setOnClickListener(object : WriteMemo.OnDialogClickListener {
+                override fun onClicked(name: String) {
+                    bottom_sheet.text = name
+                }
+            })
             }
 
      }
