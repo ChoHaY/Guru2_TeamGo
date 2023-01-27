@@ -116,6 +116,16 @@ class TodoList() : AppCompatActivity(){
                 var pjmanager: TextView = TextView(this)
                 pjmanager.text = "담당자"
                 pjmanager.setTextColor(Color.BLUE)
+                pjmanager.setOnClickListener{
+                    val dialog = WriteManager(this)
+                    dialog.showDialog()
+                    dialog.setOnClickListener(object : WriteManager.OnDialogClickListener {
+                        override fun onClicked(name: String) {
+                            pjmanager.text= name
+                        }
+                    })
+                }
+
 
 
                 layout_semi.addView(add)
