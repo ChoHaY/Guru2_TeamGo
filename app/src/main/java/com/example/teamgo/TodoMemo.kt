@@ -4,7 +4,7 @@ import android.app.Dialog
 import android.content.Context
 import android.view.WindowManager
 import android.widget.EditText
-//import kotlinx.android.synthetic.main.activity_todo_memo.*
+import kotlinx.android.synthetic.main.activity_todo_memo.*
 import net.flow9.thisisKotlin.firebase.R
 
 class TodoMemo(context: Context) {
@@ -28,14 +28,16 @@ class TodoMemo(context: Context) {
 
         val edit_name = dialog.findViewById<EditText>(R.id.name_edit)
 
-        //dialog.cancel_button.setOnClickListener {
+
+        dialog.cancel_button.setOnClickListener {
             dialog.dismiss()
         }
-        //dialog.finish_button.setOnClickListener {
-           // onClickListener.onClicked(edit_name.text.toString())
-            //dialog.dismiss()
+
+        dialog.finish_button.setOnClickListener {
+            onClickListener.onClicked(edit_name.text.toString())
+            dialog.dismiss()
         }
-   // }
+    }
 
     interface OnDialogClickListener {
         fun onClicked(name: String)
@@ -43,4 +45,4 @@ class TodoMemo(context: Context) {
 
 
 
-//}
+}

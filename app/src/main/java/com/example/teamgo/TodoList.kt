@@ -76,6 +76,8 @@ class TodoList() : AppCompatActivity(){
 
 
 
+
+
             for(day in 1 until num){
                 var layout_item: LinearLayout = LinearLayout(this)
                 var layout_semi: LinearLayout = LinearLayout(this)
@@ -91,25 +93,34 @@ class TodoList() : AppCompatActivity(){
                 pjday.setTextColor(Color.BLACK)
                 layout_semi.addView(pjday)
 
-                var add: ImageButton = ImageButton(this)
-                add.setImageResource(R.drawable.vec_add_schedule)
-                add.setPadding(10,5,0,0)
-                add.setBackgroundColor(Color.WHITE)
-                add.setOnClickListener{
-
-                }
-                layout_semi.addView(add)
-
-                layout_item.addView(layout_semi)
-
                 var pjdo:TextView=TextView(this)
                 pjdo.text = "해야할 일"
                 pjdo.setBackgroundColor(Color.LTGRAY)
                 pjdo.setPadding(0,10,0,10)
                 layout_item.addView(pjdo)
-
                 layout_item.setPadding(0,0,0,40)
                 layout.addView(layout_item)
+
+
+                var add: ImageButton = ImageButton(this)
+                add.setImageResource(R.drawable.vec_add_schedule)
+                add.setPadding(10,5,0,0)
+                add.setBackgroundColor(Color.WHITE)
+                add.setOnClickListener{
+                    val dialog = TodoMemo(this)
+                    dialog.showDialog()
+                    dialog.setOnClickListener(object : TodoMemo.OnDialogClickListener {
+                        override fun onClicked(name: String) {
+                            pjdo.text= name
+                        }
+                    })
+
+
+                }
+                layout_semi.addView(add)
+                layout_item.addView(layout_semi)
+
+
             }
         }
         cursor.close()
