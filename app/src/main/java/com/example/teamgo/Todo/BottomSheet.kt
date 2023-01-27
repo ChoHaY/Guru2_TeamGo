@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import kotlinx.android.synthetic.main.activity_bottom_sheet.*
+import kotlinx.android.synthetic.main.todo_bottom_sheet.*
 import net.flow9.thisisKotlin.firebase.R
 
 
@@ -21,7 +21,7 @@ class BottomSheet(context: Context): BottomSheetDialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-        val view = inflater.inflate(R.layout.activity_bottom_sheet, container, false)
+        val view = inflater.inflate(R.layout.todo_bottom_sheet, container, false)
         return view
 
     }
