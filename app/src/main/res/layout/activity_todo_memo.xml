@@ -48,7 +48,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="#00FF0000"
                 android:text="취소"
-                android:textColor="#D3D3D3D3" />
+                android:textColor="#808080" />
 
             <Button
                 android:id="@+id/finish_button"

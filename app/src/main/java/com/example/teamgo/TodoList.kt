@@ -104,8 +104,6 @@ class TodoList() : AppCompatActivity(){
                     bottomSheet.show(supportFragmentManager, bottomSheet.tag)
                 }
 
-
-
                 var add: ImageButton = ImageButton(this)
                 add.setImageResource(R.drawable.vec_add_schedule)
                 add.setPadding(10,5,0,0)
