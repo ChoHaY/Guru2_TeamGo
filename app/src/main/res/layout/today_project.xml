@@ -28,6 +28,7 @@
         android:layout_marginEnd="55dp"
         android:layout_marginBottom="1dp"
         android:backgroundTint="@color/white"
+        android:tint="#D5D5D5"
         app:layout_constraintBottom_toTopOf="@+id/Recommand_btn_tv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Home_btn"
@@ -44,8 +45,7 @@
         app:layout_constraintBottom_toTopOf="@+id/Home_btn_tv"
         app:layout_constraintEnd_toStartOf="@+id/Recommand_btn"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/vec_home"
-        app:tint="#FFD9D9D9" />
+        app:srcCompat="@drawable/vec_home" />
 
     <TextView
         android:id="@+id/Home_btn_tv"
