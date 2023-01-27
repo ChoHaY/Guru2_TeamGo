@@ -29,15 +29,14 @@ class BottomSheet(context: Context): BottomSheetDialogFragment() {
         view?.findViewById<TextView>(R.id.bottom_sheet)?.setOnClickListener {
             Toast.makeText(context, "메모작성 클릭", Toast.LENGTH_SHORT).show()
             dismiss()
-            //val dialog = BottomSheet(this)
-            //dialog.showDialog()
-            //dialog.setOnClickListener(object : TodoMemo.OnDialogClickListener {
-               // override fun onClicked(name: String) {
-                   // pjdo.text = name
-               // }
-           // })
-       // }
+            val dialog = WriteMemo(this)
+            dialog.showDialog()
+            dialog.setOnClickListener(object : WriteMemo.OnDialogClickListener {
+                override fun onClicked(name: String) {
+                     bottom_sheet.text = name
+                }
+            })
+        }
         }
 
     }
-}
