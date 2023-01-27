@@ -38,9 +38,7 @@ class WriteMemo(context: Context) {
             dialog.dismiss()
         }
 
-        dialog.bottom_sheet.setOnClickListener{
 
-        }
 
 
     }

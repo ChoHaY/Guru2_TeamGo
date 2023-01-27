@@ -113,10 +113,15 @@ class TodoList() : AppCompatActivity(){
                         }
                     })
                 }
-                layout_semi.addView(add)
+                var pjmanager: TextView = TextView(this)
+                pjmanager.text = "담당자"
+                pjmanager.setTextColor(Color.BLUE)
 
+
+                layout_semi.addView(add)
                 layout_item.addView(layout_semi)
                 layout_item.addView(pjdo)
+                layout_item.addView(pjmanager)
                 layout.addView(layout_item)
             }
         }

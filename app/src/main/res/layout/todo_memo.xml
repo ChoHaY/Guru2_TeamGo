@@ -24,10 +24,11 @@
 
         <EditText
             android:id="@+id/name_edit"
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
             android:layout_height="150dp"
             android:background="@android:color/transparent"
             android:hint="프로젝트 업무 내용을 작성해보세요."
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.516"
             app:layout_constraintStart_toStartOf="parent"

@@ -9,7 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import com.example.teamgo.Todo.TodoMemo
+import com.example.teamgo.Todo.WriteMemo
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.todo_bottom_sheet.*
 import net.flow9.thisisKotlin.firebase.R
 
@@ -30,23 +33,21 @@ class BottomSheet(context: Context): BottomSheetDialogFragment() {
 
         super.onActivityCreated(savedInstanceState)
         bottom_sheet.setOnClickListener {
-            Toast.makeText(context, "메모작성 클릭", Toast.LENGTH_SHORT).show()
             dismiss()
-//                val dialog = WriteMemo(this)
-//                dialog.showDialog()
-//                dialog.setOnClickListener(object : WriteMemo.OnDialogClickListener {
-//                    override fun onClicked(name: String) {
-//                        bottom_sheet.text = name
-//                    }
-//                })
+            val dialog = WriteMemo(requireContext())
+            dialog.showDialog()
+            dialog.setOnClickListener(object : WriteMemo.OnDialogClickListener {
+                var pjdo:TextView=TextView(requireContext())
+                override fun onClicked(name: String) {
+                    pjdo.text= name
+                }
 
-//            val dialog = new Dialog(WriteMemo())
-//            dialog.setContentView(R.layout.activity_writememo)
-//            dialog.show()
+            })
+
 
             }
-
      }
+
         }
 
 
