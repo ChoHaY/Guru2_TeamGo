@@ -12,7 +12,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="27dp"
         android:layout_marginTop="83dp"
         android:fontFamily="@font/gmarketsansttfmedium"
         android:text="이렇게 진행해보세요!"
@@ -41,7 +41,6 @@
         android:layout_marginStart="55dp"
         android:layout_marginEnd="129dp"
         android:backgroundTint="@color/white"
-        android:tint="#D5D5D5"
         app:layout_constraintBottom_toTopOf="@+id/Home_btn_tv"
         app:layout_constraintEnd_toStartOf="@+id/Recommand_btn"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +67,8 @@
         app:layout_constraintBottom_toTopOf="@+id/Recommand_btn_tv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Home_btn"
-        app:srcCompat="@drawable/vec_recommand" />
+        app:srcCompat="@drawable/vec_recommand"
+        app:tint="#FFD9D9D9"/>
 
     <TextView
         android:id="@+id/Recommand_btn_tv"
@@ -85,7 +85,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="27dp"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/gmarketsansttfmedium"
         android:text="팀 프로젝트 진행 프로세스를 추천해드려요."

@@ -28,7 +28,6 @@
         android:layout_marginEnd="55dp"
         android:layout_marginBottom="1dp"
         android:backgroundTint="@color/white"
-        android:tint="#D5D5D5"
         app:layout_constraintBottom_toTopOf="@+id/Recommand_btn_tv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Home_btn"
@@ -45,7 +44,8 @@
         app:layout_constraintBottom_toTopOf="@+id/Home_btn_tv"
         app:layout_constraintEnd_toStartOf="@+id/Recommand_btn"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/vec_home" />
+        app:srcCompat="@drawable/vec_home"
+        app:tint="#FFD9D9D9" />
 
     <TextView
         android:id="@+id/Home_btn_tv"
@@ -81,8 +81,8 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="340dp"
-        android:layout_height="516dp"
+        android:layout_width="381dp"
+        android:layout_height="508dp"
         android:layout_marginTop="124dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.476"
@@ -95,7 +95,10 @@
             android:layout_height="wrap_content"
             android:lineSpacingExtra="5dp"
             android:orientation="vertical"
-            android:layout_margin="16dp" />
+            android:paddingLeft="40dp"
+            android:paddingTop="40dp"
+            android:paddingRight="40dp"
+            android:paddingBottom="40dp" />
 
     </ScrollView>
 
