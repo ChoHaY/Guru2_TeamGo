@@ -12,10 +12,6 @@ class DBManager(
         db!!.execSQL("CREATE TABLE projectlist_ (PJname text, PJdate text, PJgap text)")
     }
 
-    fun onCreate2(db: SQLiteDatabase){
-        db!!.execSQL("CREATE TABLE projectdetail (PJday text)")
-    }
-
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
     }
 }

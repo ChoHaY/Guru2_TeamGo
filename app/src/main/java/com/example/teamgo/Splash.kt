@@ -10,7 +10,7 @@ import net.flow9.thisisKotlin.firebase.R
 class Splash : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
+        setContentView(R.layout.a_splash)
 
         // 일정 시간 후 실행 함수
         Handler(Looper.getMainLooper()).postDelayed({

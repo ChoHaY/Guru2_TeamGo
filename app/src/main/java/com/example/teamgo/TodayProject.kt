@@ -11,8 +11,9 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.annotation.RequiresApi
-import androidx.core.view.marginBottom
-import androidx.core.view.setPadding
+import com.example.teamgo.AddProject.AddProject_name
+import com.example.teamgo.Recomand.Recommand
+import com.example.teamgo.Todo.TodoList
 import com.google.firebase.auth.FirebaseAuth
 import net.flow9.thisisKotlin.firebase.R
 
@@ -30,7 +31,7 @@ class TodayProject : AppCompatActivity() {
     @SuppressLint("Range", "MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_today_project)
+        setContentView(R.layout.today_project)
 
         Nolist = findViewById(R.id.Nolist_tv)
         auth = FirebaseAuth.getInstance()
@@ -99,6 +100,14 @@ class TodayProject : AppCompatActivity() {
             startActivity(intent)
         }
 
+        var gohome: ImageButton = findViewById(R.id.Home_btn)
+        gohome.isEnabled=false
+
+        var recommand: ImageButton = findViewById(R.id.Recommand_btn)
+        recommand.setOnClickListener{
+            val intent = Intent(this, Recommand::class.java)
+            startActivity(intent)
+        }
     }
 }
 

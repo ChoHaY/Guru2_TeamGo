@@ -1,4 +1,4 @@
-package com.example.teamgo
+package com.example.teamgo.AddProject
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -13,6 +13,8 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
+import com.example.teamgo.DBManager
+import com.example.teamgo.Todo.TodoList
 import com.google.android.material.datepicker.MaterialDatePicker
 import net.flow9.thisisKotlin.firebase.R
 import java.util.*
@@ -31,7 +33,7 @@ class AddProject_date : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_project_date)
+        setContentView(R.layout.add_project_date)
 
         Backbtn = findViewById(R.id.Back_btn2)
         DateView = findViewById(R.id.InputDate)
@@ -39,7 +41,7 @@ class AddProject_date : AppCompatActivity() {
         days= findViewById(R.id.editview)
 
         Backbtn.setOnClickListener {
-            val intent = Intent(this,AddProject_name::class.java)
+            val intent = Intent(this, AddProject_name::class.java)
 
             startActivity(intent)
         }

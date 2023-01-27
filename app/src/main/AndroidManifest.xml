@@ -14,29 +14,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TeamGo"
         tools:targetApi="31">
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@drawable/stroke" />
+
         <activity
-            android:name="com.example.teamgo.Recommand"
+            android:name="com.example.teamgo.Recomand.Recommand"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.example.teamgo.TodoList"
+            android:name="com.example.teamgo.Todo.TodoList"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.example.teamgo.AddProject_date"
+            android:name="com.example.teamgo.AddProject.AddProject_date"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.example.teamgo.AddProject_name"
+            android:name="com.example.teamgo.AddProject.AddProject_name"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

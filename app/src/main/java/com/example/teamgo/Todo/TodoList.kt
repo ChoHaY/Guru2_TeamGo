@@ -1,4 +1,4 @@
-package com.example.teamgo
+package com.example.teamgo.Todo
 
 import android.annotation.SuppressLint
 import android.content.DialogInterface
@@ -6,7 +6,6 @@ import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.graphics.Color
-import android.graphics.drawable.Drawable
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,8 +15,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
-import androidx.core.view.marginBottom
-import androidx.core.view.setPadding
+import com.example.teamgo.DBManager
+import com.example.teamgo.TodayProject
 import net.flow9.thisisKotlin.firebase.R
 
 class TodoList() : AppCompatActivity(){
@@ -35,12 +34,12 @@ class TodoList() : AppCompatActivity(){
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_todo_list)
+        setContentView(R.layout.todo_list)
 
         //pjname = findViewById(R.id.project_name3)
         back = findViewById(R.id.back)
         back.setOnClickListener{
-            val intent = Intent(this,TodayProject::class.java)
+            val intent = Intent(this, TodayProject::class.java)
             startActivity(intent)
         }
 
@@ -74,8 +73,6 @@ class TodoList() : AppCompatActivity(){
 
             pjmem =findViewById(R.id.Member)
 
-
-
             for(day in 1 until num){
                 var layout_item: LinearLayout = LinearLayout(this)
                 var layout_semi: LinearLayout = LinearLayout(this)
@@ -94,10 +91,8 @@ class TodoList() : AppCompatActivity(){
                 var pjdo:TextView=TextView(this)
                 pjdo.text = "해야할 일"
                 pjdo.setBackgroundColor(Color.LTGRAY)
-                pjdo.setPadding(0,10,0,10)
-                layout_item.addView(pjdo)
+                pjdo.setPadding(5,10,0,10)
                 layout_item.setPadding(0,0,0,40)
-                layout.addView(layout_item)
 
                 pjdo.setOnClickListener{
                     val bottomSheet = BottomSheet(this)
@@ -118,9 +113,10 @@ class TodoList() : AppCompatActivity(){
                     })
                 }
                 layout_semi.addView(add)
+
                 layout_item.addView(layout_semi)
-
-
+                layout_item.addView(pjdo)
+                layout.addView(layout_item)
             }
         }
         cursor.close()
@@ -141,7 +137,7 @@ class TodoList() : AppCompatActivity(){
                     sqlitedb.close()
                     dbManager.close()
 
-                    val intent = Intent(this,TodayProject::class.java)
+                    val intent = Intent(this, TodayProject::class.java)
                     startActivity(intent)
                 })
                 .setNegativeButton("아니오",DialogInterface.OnClickListener{dialog, which->

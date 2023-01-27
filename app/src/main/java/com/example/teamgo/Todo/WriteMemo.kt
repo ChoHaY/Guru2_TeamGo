@@ -1,11 +1,11 @@
-package com.example.teamgo
+package com.example.teamgo.Todo
 
 import android.app.Dialog
 import android.content.Context
 import android.view.WindowManager
 import android.widget.EditText
-import kotlinx.android.synthetic.main.activity_bottom_sheet.*
-import kotlinx.android.synthetic.main.activity_writememo.*
+import kotlinx.android.synthetic.main.todo_bottom_sheet.*
+import kotlinx.android.synthetic.main.todo_writememo.*
 import net.flow9.thisisKotlin.firebase.R
 
 class WriteMemo(context: Context) {
@@ -18,7 +18,7 @@ class WriteMemo(context: Context) {
     }
 
     fun showDialog() {
-        dialog.setContentView(R.layout.activity_writememo)
+        dialog.setContentView(R.layout.todo_writememo)
         dialog.window!!.setLayout(
             WindowManager.LayoutParams.WRAP_CONTENT,
             WindowManager.LayoutParams.WRAP_CONTENT
