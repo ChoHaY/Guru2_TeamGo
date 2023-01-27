@@ -9,7 +9,7 @@
         android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="282dp"
         android:backgroundTint="@color/white"
@@ -48,6 +48,7 @@
         android:layout_marginTop="80dp"
         android:layout_marginEnd="190dp"
         android:textSize="25sp"
+        android:fontFamily="@font/gmarketsansttfmedium"
         app:layout_constraintBottom_toTopOf="@+id/allday"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -61,6 +62,7 @@
         android:layout_marginStart="26dp"
         android:layout_marginBottom="6dp"
         android:textSize="14sp"
+        android:fontFamily="@font/gmarketsansttfmedium"
         app:layout_constraintBottom_toTopOf="@+id/Member"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -72,8 +74,9 @@
         android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
-        android:background="@color/mainBlue"
+        android:background="@drawable/radius"
         android:padding="10dp"
+        android:fontFamily="@font/gmarketsansttfmedium"
         android:text="프로젝트 팀원"
         android:textColor="@color/white"
         android:textSize="14dp"
@@ -102,6 +105,7 @@
             android:layout_marginLeft="24dp"
             android:layout_marginBottom="20dp"
             android:background="@color/white"
+            android:fontFamily="@font/gmarketsansttfmedium"
             android:orientation="vertical"/>
 
     </ScrollView>
