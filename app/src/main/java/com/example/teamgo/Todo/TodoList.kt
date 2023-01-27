@@ -96,6 +96,7 @@ class TodoList() : AppCompatActivity(){
                 var pjdo:TextView=TextView(this)
                 pjdo.text = "해야할 일"
                 pjdo.width = 260
+                pjdo.setTextColor(Color.BLACK)
                 pjdo.setBackgroundResource(R.drawable.list_stroke)
                 pjdo.setPadding(8,15,0,15)
                 layout_item.setPadding(0,0,0,40)

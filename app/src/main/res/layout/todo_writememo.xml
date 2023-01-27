@@ -19,8 +19,9 @@
             android:layout_marginBottom="16dp"
             android:layout_margin="10dp"
             android:text="수정"
+            android:fontFamily="@font/gmarketsansttfmedium"
             android:textColor="@android:color/black"
-            android:textSize="30sp"
+            android:textSize="25sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             tools:layout_editor_absoluteY="345dp" />
@@ -31,6 +32,7 @@
             android:layout_height="150dp"
             android:background="@android:color/transparent"
             android:hint="메모 내용을 수정해보세요."
+            android:fontFamily="@font/gmarketsansttfmedium"
             android:layout_margin="10dp"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -53,6 +55,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="@color/white"
                 android:text="취소"
+                android:fontFamily="@font/gmarketsansttfmedium"
                 android:textColor="#808080" />
 
             <Button
@@ -62,6 +65,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="@color/white"
                 android:text="완료"
+                android:fontFamily="@font/gmarketsansttfmedium"
                 android:textColor="@color/mainBlue" />
 
         </LinearLayout>

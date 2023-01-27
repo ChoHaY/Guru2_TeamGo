@@ -30,7 +30,7 @@
 
         <EditText
             android:id="@+id/name_edit"
-            android:layout_width="wrap_content"
+            android:layout_width="294dp"
             android:layout_height="150dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
@@ -56,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_margin="0dp"
-                android:backgroundTint="#00000000"
+                android:backgroundTint="@color/white"
                 android:text="취소"
                 android:fontFamily="@font/gmarketsansttfmedium"
                 android:textColor="#808080" />
@@ -66,7 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="#00FF0000"
+                android:backgroundTint="@color/white"
                 android:text="추가"
                 android:fontFamily="@font/gmarketsansttfmedium"
                 android:textColor="@color/mainBlue" />

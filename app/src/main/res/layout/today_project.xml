@@ -81,8 +81,8 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="381dp"
-        android:layout_height="508dp"
+        android:layout_width="340dp"
+        android:layout_height="516dp"
         android:layout_marginTop="124dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.476"
@@ -95,10 +95,7 @@
             android:layout_height="wrap_content"
             android:lineSpacingExtra="5dp"
             android:orientation="vertical"
-            android:paddingLeft="40dp"
-            android:paddingTop="40dp"
-            android:paddingRight="40dp"
-            android:paddingBottom="40dp" />
+            android:layout_margin="16dp" />
 
     </ScrollView>
 

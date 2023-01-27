@@ -12,6 +12,7 @@
                 android:color="@color/mainBlue" />
 
             <solid android:color="@color/white" />
+            <corners android:radius="15dp"/>
         </shape>
     </item>
 
