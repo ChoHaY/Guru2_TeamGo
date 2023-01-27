@@ -49,7 +49,7 @@ class Login : AppCompatActivity() {
                         }
             }
         }
-            /*auth = FirebaseAuth.getInstance()
+            auth = FirebaseAuth.getInstance()
             var currentUser = auth?.currentUser //이미 로그인한적이 있는지 확인합니다.
 
             if (currentUser == null) {
@@ -68,7 +68,7 @@ class Login : AppCompatActivity() {
                         finish()
                     }
                 }, 1500)
-            }*/
+            }
     }
     fun login(Email: String, Password: String) {
         auth.signInWithEmailAndPassword(Email, Password) // 로그인
