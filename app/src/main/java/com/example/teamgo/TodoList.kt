@@ -95,6 +95,9 @@ class TodoList() : AppCompatActivity(){
                 add.setImageResource(R.drawable.vec_add_schedule)
                 add.setPadding(10,5,0,0)
                 add.setBackgroundColor(Color.WHITE)
+                add.setOnClickListener{
+
+                }
                 layout_semi.addView(add)
 
                 layout_item.addView(layout_semi)
@@ -141,11 +144,9 @@ class TodoList() : AppCompatActivity(){
 
         findViewById<ImageButton>(R.id.invitation_btn).setOnClickListener {
 
-            val message = "팀 계획을 짜고 싶다고?? 당신을 '팀 고'로 초대합니다! ~\n\nhttps://naver.com"
+            val message = "팀 계획을 짜고 싶다고??\n당신을 '팀고(TeamGo)'로 초대합니다!\n\nhttps://naver.com"
             share(message)
         }
-
-
 
     }
 
