@@ -65,16 +65,14 @@ class TodoList() : AppCompatActivity(){
         if(cursor.moveToNext()){
             str_date = intent.getStringExtra("intent_PJ_date").toString()
 
+            pjdate = findViewById(R.id.allday)
+            pjdate.text = str_date
+
             pjname = findViewById(R.id.project_name3)
             pjname.text = str_name
             pjname.setTextColor(Color.BLACK)
 
-            pjdate = findViewById(R.id.allday)
-            pjdate.text = str_date
-
             pjmem =findViewById(R.id.Member)
-
-
 
 
 
@@ -101,6 +99,12 @@ class TodoList() : AppCompatActivity(){
                 layout_item.setPadding(0,0,0,40)
                 layout.addView(layout_item)
 
+                pjdo.setOnClickListener{
+                    val bottomSheet = BottomSheet(this)
+                    bottomSheet.show(supportFragmentManager, bottomSheet.tag)
+                }
+
+
 
                 var add: ImageButton = ImageButton(this)
                 add.setImageResource(R.drawable.vec_add_schedule)
@@ -114,8 +118,6 @@ class TodoList() : AppCompatActivity(){
                             pjdo.text= name
                         }
                     })
-
-
                 }
                 layout_semi.addView(add)
                 layout_item.addView(layout_semi)
