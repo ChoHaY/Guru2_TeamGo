@@ -128,6 +128,17 @@ class TodoList() : AppCompatActivity(){
                 pjmanager.setTextColor(Color.BLUE)
                 layout_2.addView(pjmanager)
 
+                //담당자 클릭했을 때 담당자 작성하는 다이얼로그 나오도록
+                pjmanager.setOnClickListener{
+                    val dialog = WriteManager(this)
+                    dialog.showDialog()
+                    dialog.setOnClickListener(object : WriteManager.OnDialogClickListener {
+                        override fun onClicked(name: String) {
+                            pjmanager.text= name
+                        }
+                    })
+                }
+                ////////
                 layout_2.setPadding(0,0,0,20)
                 layout.addView(layout_1)
                 layout.addView(layout_2)
