@@ -9,7 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import com.example.teamgo.Todo.TodoList
 import com.example.teamgo.Todo.TodoMemo
+import com.example.teamgo.Todo.WriteManager
 import com.example.teamgo.Todo.WriteMemo
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.android.synthetic.*
@@ -34,18 +36,28 @@ class BottomSheet(context: Context): BottomSheetDialogFragment() {
         super.onActivityCreated(savedInstanceState)
         bottom_sheet.setOnClickListener {
             dismiss()
+            var pjdo:TextView=TextView(requireContext())
             val dialog = WriteMemo(requireContext())
             dialog.showDialog()
             dialog.setOnClickListener(object : WriteMemo.OnDialogClickListener {
-                var pjdo:TextView=TextView(requireContext())
                 override fun onClicked(name: String) {
-                    pjdo.text= name
+                    pjdo.text = name
                 }
-
             })
-
-
             }
+
+        bottom_sheet2.setOnClickListener {
+            dismiss()
+            var pjmanager:TextView=TextView(requireContext())
+            val dialog = WriteManager(requireContext())
+            dialog.showDialog()
+            dialog.setOnClickListener(object : WriteManager.OnDialogClickListener {
+                override fun onClicked(name: String) {
+                    pjmanager.text= name
+                }
+            })
+        }
+
      }
 
         }
