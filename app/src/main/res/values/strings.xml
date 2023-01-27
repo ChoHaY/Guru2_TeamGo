@@ -6,10 +6,16 @@
     <string name="title_notifications">Notifications</string>
 
         <string-array name="pj_name">
-            <item>IT협업 프로젝트</item>
+            <item>앱개발 프로젝트</item>
             <item>마케팅 공모전</item>
             <item>디자인 공모전</item>
             <item>프렌젠테이션</item>
+        </string-array>
+
+        <string-array name="APP_dev">
+            <item>1) 역할분담\n 보통 기획,디자인,개발로 나누어 역할을 맡습니다.</item>
+            <item>2) 앱 구성</item>
+            <item>3) 앱 기획</item>
         </string-array>
 
 </resources>

@@ -1,5 +1,6 @@
 package com.example.teamgo.Recomand
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,7 +29,6 @@ class ExpandableAdapter(
                 person.isExpanded = show
             }
         }
-
         private fun toggleLayout(isExpanded: Boolean, view: View, layoutExpand: LinearLayout): Boolean {
             ToggleAnimation.toggleArrow(view, isExpanded)
             if (isExpanded) {

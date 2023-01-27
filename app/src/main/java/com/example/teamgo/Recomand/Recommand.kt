@@ -5,7 +5,10 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageButton
+import android.widget.LinearLayout
+import android.widget.TextView
 import net.flow9.thisisKotlin.firebase.R
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -30,13 +33,14 @@ class Recommand : AppCompatActivity() {
         adapter = ExpandableAdapter(personList)
         recyclerView.adapter = adapter
 
+        ///////////////////////////////////////////////////////////////////////
         var gohome: ImageButton = findViewById(R.id.Home_btn)
-        gohome.setOnClickListener{
+        gohome.setOnClickListener {
             val intent = Intent(this, TodayProject::class.java)
             startActivity(intent)
         }
         var recommand: ImageButton = findViewById(R.id.Recommand_btn)
-        recommand.isEnabled=false
+        recommand.isEnabled = false
     }
     private fun loadData(): List<Person> {
         val people = ArrayList<Person>()

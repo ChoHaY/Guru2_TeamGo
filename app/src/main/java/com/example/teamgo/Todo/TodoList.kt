@@ -6,6 +6,7 @@ import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.graphics.Color
+import android.graphics.drawable.Drawable
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -76,10 +77,12 @@ class TodoList() : AppCompatActivity(){
 
             for(day in 1 until num){
                 var layout_item: LinearLayout = LinearLayout(this)
-                var layout_semi: LinearLayout = LinearLayout(this)
+                var layout_1: LinearLayout = LinearLayout(this)
+                var layout_2: LinearLayout = LinearLayout(this)
 
                 layout_item.orientation = LinearLayout.VERTICAL
-                layout_semi.orientation = LinearLayout.HORIZONTAL
+                layout_1.orientation = LinearLayout.HORIZONTAL
+                layout_2.orientation = LinearLayout.HORIZONTAL
 
                 var pjday: TextView = TextView(this)
                 pjday.text = "Day$day"
@@ -87,14 +90,16 @@ class TodoList() : AppCompatActivity(){
                 pjday.width = 280
                 pjday.setPadding(0,0,0,5)
                 pjday.setTextColor(Color.BLACK)
-                layout_semi.addView(pjday)
+                layout_1.addView(pjday)
 
                 var pjdo:TextView=TextView(this)
+                pjdo.width=260
                 pjdo.text = "해야할 일"
                 pjdo.setBackgroundColor(Color.LTGRAY)
-                pjdo.setPadding(5,10,0,10)
+                pjdo.setBackgroundResource(R.drawable.list_stroke)
+                pjdo.setPadding(8,10,0,10)
                 layout_item.setPadding(0,0,0,40)
-
+                layout_2.addView(pjdo)
                 pjdo.setOnClickListener{
                     val bottomSheet = BottomSheet(this)
                     bottomSheet.show(supportFragmentManager, bottomSheet.tag)
@@ -113,15 +118,17 @@ class TodoList() : AppCompatActivity(){
                         }
                     })
                 }
+                layout_1.addView(add)
+
                 var pjmanager: TextView = TextView(this)
                 pjmanager.text = "담당자"
                 pjmanager.setTextColor(Color.BLUE)
+                pjmanager.setBackgroundColor(Color.LTGRAY)
+                pjmanager.setPadding(0,10,5,10)
+                layout_2.addView(pjmanager)
 
-
-                layout_semi.addView(add)
-                layout_item.addView(layout_semi)
-                layout_item.addView(pjdo)
-                layout_item.addView(pjmanager)
+                layout_item.addView(layout_1)
+                layout_item.addView(layout_2)
                 layout.addView(layout_item)
             }
         }
