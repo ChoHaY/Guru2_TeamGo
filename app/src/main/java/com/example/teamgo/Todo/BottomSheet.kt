@@ -41,7 +41,7 @@ class BottomSheet(context: Context): BottomSheetDialogFragment() {
             dialog.showDialog()
             dialog.setOnClickListener(object : WriteMemo.OnDialogClickListener {
                 override fun onClicked(name: String) {
-                    pjdo.text = name
+                    pjdo.setText(name)
                 }
             })
             }
@@ -53,8 +53,9 @@ class BottomSheet(context: Context): BottomSheetDialogFragment() {
             dialog.showDialog()
             dialog.setOnClickListener(object : WriteManager.OnDialogClickListener {
                 override fun onClicked(name: String) {
-                    pjmanager.text= name
+                    pjmanager.text = name
                 }
+
             })
         }
 
