@@ -4,18 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/memo_back"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:text="할 일"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+
+            android:fontFamily="@font/gmarketsansttfmedium"
+            android:text="업무 내용"
             android:textColor="@android:color/black"
             android:textSize="30sp"
             android:textStyle="bold"
@@ -24,9 +30,12 @@
 
         <EditText
             android:id="@+id/name_edit"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="150dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:background="@android:color/transparent"
+            android:fontFamily="@font/gmarketsansttfmedium"
             android:hint="프로젝트 업무 내용을 작성해보세요."
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.516"
@@ -46,8 +55,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="#00FF0000"
+                android:layout_margin="0dp"
+                android:backgroundTint="#00000000"
                 android:text="취소"
+                android:fontFamily="@font/gmarketsansttfmedium"
                 android:textColor="#808080" />
 
             <Button
@@ -57,6 +68,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="#00FF0000"
                 android:text="추가"
+                android:fontFamily="@font/gmarketsansttfmedium"
                 android:textColor="@color/mainBlue" />
 
         </LinearLayout>
