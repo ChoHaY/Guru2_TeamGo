@@ -35,19 +35,21 @@ class Login : AppCompatActivity() {
             auth.createUserWithEmailAndPassword(Email, Password)
                 .addOnCompleteListener { result ->
                     if (result.isSuccessful) {
-                        Toast.makeText(this, "회원가입이 완료되었습니다.", Toast.LENGTH_SHORT).show()
                         if (auth.currentUser != null) {
+                            Toast.makeText(this, "회원가입 완료", Toast.LENGTH_SHORT).show()
+                            var intent = Intent(this, TodayProject::class.java)
+                            startActivity(intent)}
+                        } else if (result.exception?.message.isNullOrEmpty()) {
+                            Toast.makeText(this, "오류가 발생", Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(this, "로그인 완료", Toast.LENGTH_SHORT).show()
+                            login(Email.toString(), Password.toString())
                             var intent = Intent(this, TodayProject::class.java)
                             startActivity(intent)
                         }
-                    } else if (result.exception?.message.isNullOrEmpty()) {
-                        Toast.makeText(this, "오류가 발생했습니다.", Toast.LENGTH_SHORT).show()
-                    } else {
-                        login(Email.toString(), Password.toString())
-                    }
             }
         }
-            auth = FirebaseAuth.getInstance()
+            /*auth = FirebaseAuth.getInstance()
             var currentUser = auth?.currentUser //이미 로그인한적이 있는지 확인합니다.
 
             if (currentUser == null) {
@@ -66,7 +68,7 @@ class Login : AppCompatActivity() {
                         finish()
                     }
                 }, 1500)
-            }
+            }*/
     }
     fun login(Email: String, Password: String) {
         auth.signInWithEmailAndPassword(Email, Password) // 로그인
