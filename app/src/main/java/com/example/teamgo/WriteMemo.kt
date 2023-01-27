@@ -4,6 +4,7 @@ import android.app.Dialog
 import android.content.Context
 import android.view.WindowManager
 import android.widget.EditText
+import kotlinx.android.synthetic.main.activity_bottom_sheet.*
 import kotlinx.android.synthetic.main.activity_writememo.*
 import net.flow9.thisisKotlin.firebase.R
 
@@ -37,8 +38,15 @@ class WriteMemo(context: Context) {
             dialog.dismiss()
         }
 
+        dialog.bottom_sheet.setOnClickListener{
+
+        }
+
+
     }
     interface OnDialogClickListener {
         fun onClicked(name: String)
+
+
     }
 }

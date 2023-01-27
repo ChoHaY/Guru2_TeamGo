@@ -174,4 +174,6 @@ class TodoList() : AppCompatActivity(){
             Toast.makeText(this, "초대 메세지를 전송할 수 없습니다", Toast.LENGTH_LONG).show()
         }
     }
+
+
 }
