@@ -69,27 +69,6 @@ class Login : AppCompatActivity() {
             finish()
             Toast.makeText(this, "자동 로그인", Toast.LENGTH_SHORT).show()
         }
-
-        /*auth = FirebaseAuth.getInstance()
-        var currentUser = auth?.currentUser //이미 로그인한적이 있는지 확인합니다.
-
-        if (currentUser == null) {
-            /*Timer().schedule(object : TimerTask() {
-                override fun run() {
-                    val intent: Intent = Intent(applicationContext, Login::class.java)
-                    startActivity(intent)
-                    finish()
-                }
-            }, 1500)*/
-        } else {
-            Timer().schedule(object : TimerTask() {
-                override fun run() {
-                    val intent: Intent = Intent(applicationContext, TodayProject::class.java)
-                    startActivity(intent)
-                    finish()
-                }
-            }, 1500)
-        }*/
     }
     fun login(Email: String, Password: String) {
         auth.signInWithEmailAndPassword(Email, Password) // 로그인
