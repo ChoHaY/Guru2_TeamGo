@@ -124,8 +124,8 @@ class TodoList() : AppCompatActivity(){
 
                 var pjmanager: TextView = TextView(this)
                 pjmanager.text = "담당자"
-                pjmanager.setBackgroundColor(Color.parseColor("#FFDFDFDF"))
-                pjmanager.setPadding(5,15,5,15)
+                pjmanager.setBackgroundColor(Color.parseColor("#EAEAEA"))
+                pjmanager.setPadding(5,15,15,15)
                 pjmanager.setTextColor(Color.BLUE)
                 layout_2.addView(pjmanager)
 

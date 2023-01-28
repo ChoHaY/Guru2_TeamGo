@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/memo_back"
     android:orientation="vertical">
 
     <LinearLayout
@@ -15,7 +16,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_margin="16dp"
             android:background="#FFFFFF"
             android:text="할 일"
             android:fontFamily="@font/gmarketsansttfmedium"
@@ -29,6 +30,8 @@
             android:id="@+id/name_edit"
             android:layout_width="match_parent"
             android:layout_height="150dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:background="@android:color/white"
             android:hint="프로젝트 업무 내용을 작성해보세요."
             android:fontFamily="@font/gmarketsansttfmedium"
@@ -50,7 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="#00FF0000"
+                android:backgroundTint="@color/white"
                 android:text="취소"
                 android:fontFamily="@font/gmarketsansttfmedium"
                 android:textColor="#808080" />
@@ -60,7 +63,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="#00FF0000"
+                android:backgroundTint="@color/white"
                 android:text="추가"
                 android:fontFamily="@font/gmarketsansttfmedium"
                 android:textColor="@color/mainBlue" />
