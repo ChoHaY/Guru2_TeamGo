@@ -66,7 +66,7 @@ class Login : AppCompatActivity() {
             }
         }
 
-        if(savedC == true){
+       if(savedC == true){
             val intent: Intent = Intent(applicationContext, TodayProject::class.java)
             intent.putExtra("UserID",savedID)
             startActivity(intent)
