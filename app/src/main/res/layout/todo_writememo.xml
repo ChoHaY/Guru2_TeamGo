@@ -9,13 +9,15 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/white">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:text="수정"
+            android:fontFamily="@font/gmarketsansttfmedium"
             android:textColor="@android:color/black"
             android:textSize="30sp"
             android:textStyle="bold"
@@ -28,6 +30,7 @@
             android:layout_height="150dp"
             android:background="@android:color/transparent"
             android:hint="메모 내용을 수정해보세요."
+            android:fontFamily="@font/gmarketsansttfmedium"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.516"
@@ -49,6 +52,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="#00FF0000"
                 android:text="취소"
+                android:fontFamily="@font/gmarketsansttfmedium"
                 android:textColor="#808080" />
 
             <Button
@@ -58,6 +62,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="#00FF0000"
                 android:text="완료"
+                android:fontFamily="@font/gmarketsansttfmedium"
                 android:textColor="@color/mainBlue" />
 
         </LinearLayout>
