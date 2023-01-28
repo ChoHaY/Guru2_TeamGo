@@ -5,6 +5,7 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.view.WindowManager
+import android.widget.Button
 import android.widget.EditText
 import kotlinx.android.synthetic.main.todo_bottom_sheet.*
 import kotlinx.android.synthetic.main.todo_writememo.*
@@ -31,12 +32,15 @@ class WriteMemo(context: Context) {
         dialog.show()
 
         val edit_name2 = dialog.findViewById<EditText>(R.id.name_edit2)
+        val button_finish = dialog.findViewById<Button>(R.id.finish_button2)
+        val button_cancel = dialog.findViewById<Button>(R.id.cancel_button2)
 
-        dialog.cancel_button2.setOnClickListener {
+        button_cancel.setOnClickListener {
             dialog.dismiss()
         }
 
-        dialog.finish_button2.setOnClickListener {
+
+        button_finish.setOnClickListener {
             onClickListener.onClicked(edit_name2.text.toString())
             dialog.dismiss()
         }

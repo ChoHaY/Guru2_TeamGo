@@ -110,6 +110,17 @@ class TodoList() : AppCompatActivity(){
                     bottomSheet.show(supportFragmentManager, bottomSheet.tag)
                 }
 
+                pjdo.setOnClickListener {
+                    val dialog = WriteMemo(this)
+                    dialog.showDialog()
+                    dialog.setOnClickListener(object : WriteMemo.OnDialogClickListener {
+                        override fun onClicked(name: String) {
+                            pjdo.text= name
+
+                        }
+                    })
+                }
+
                 var add: ImageButton = ImageButton(this)
                 add.setImageResource(R.drawable.vec_add_schedule)
                 add.setPadding(10,5,0,0)

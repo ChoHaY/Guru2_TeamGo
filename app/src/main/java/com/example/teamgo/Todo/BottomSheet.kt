@@ -34,6 +34,7 @@ class BottomSheet(context: Context): BottomSheetDialogFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
 
         super.onActivityCreated(savedInstanceState)
+
         bottom_sheet.setOnClickListener {
             dismiss()
             var pjdo:TextView=TextView(requireContext())
