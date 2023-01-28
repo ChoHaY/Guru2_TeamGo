@@ -33,6 +33,10 @@ class Login : AppCompatActivity() {
         putID = findViewById(R.id.InputID)
         check = findViewById(R.id.AuthLogin_check)
 
+        val pref = getSharedPreferences("LoginInfo", 0)
+        val savedID = pref.getString("ID","").toString()
+        val savedC =pref.getBoolean("BOX",false)
+
         Loginbtn.setOnClickListener {
             var ID = putID.text.toString()
             var CheckBox = check.isChecked()
@@ -46,6 +50,7 @@ class Login : AppCompatActivity() {
                             saveDate(ID,CheckBox)
                             Toast.makeText(this, "회원가입 완료", Toast.LENGTH_SHORT).show()
                             var intent = Intent(this, TodayProject::class.java)
+                            intent.putExtra("UserID",savedID)
                             startActivity(intent)}
                         } else if (result.exception?.message.isNullOrEmpty()) {
                             Toast.makeText(this, "오류가 발생", Toast.LENGTH_SHORT).show()
@@ -54,17 +59,16 @@ class Login : AppCompatActivity() {
                             Toast.makeText(this, "로그인 완료", Toast.LENGTH_SHORT).show()
                             login(Email.toString(), Password.toString())
                             var intent = Intent(this, TodayProject::class.java)
+                            intent.putExtra("UserID",savedID)
                             startActivity(intent)
                         }
 
             }
         }
 
-        val pref = getSharedPreferences("LoginInfo", 0)
-        val savedC =pref.getBoolean("BOX",false)
-
         if(savedC == true){
             val intent: Intent = Intent(applicationContext, TodayProject::class.java)
+            intent.putExtra("UserID",savedID)
             startActivity(intent)
             finish()
             Toast.makeText(this, "자동 로그인", Toast.LENGTH_SHORT).show()

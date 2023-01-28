@@ -29,8 +29,11 @@ class AddProject_name : AppCompatActivity() {
         Nextbtn = findViewById(R.id.Next_btn)
         Nextbtn.isEnabled = false
 
+        var userID : String = intent.getStringExtra("UserID").toString()
+
         Backbtn.setOnClickListener {
             val intent = Intent(this, TodayProject::class.java)
+            intent.putExtra("UserID",userID)
             startActivity(intent)
         }
 
@@ -51,6 +54,7 @@ class AddProject_name : AppCompatActivity() {
 
         Nextbtn.setOnClickListener {
             val intent = Intent(this, AddProject_date::class.java)
+            intent.putExtra("UserID",userID)
             intent.putExtra("name",RegName.text.toString())
             startActivity(intent)
         }

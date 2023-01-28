@@ -42,7 +42,6 @@ class AddProject_date : AppCompatActivity() {
 
         Backbtn.setOnClickListener {
             val intent = Intent(this, AddProject_name::class.java)
-
             startActivity(intent)
         }
 
@@ -89,6 +88,7 @@ class AddProject_date : AppCompatActivity() {
         })
 
         dbManager = DBManager(this,"projectlist_DB", null, 1)
+        var userID : String = intent.getStringExtra("UserID").toString()
 
         Nextbtn.setOnClickListener {
             var str_name : String = intent.getStringExtra("name").toString()
@@ -100,6 +100,7 @@ class AddProject_date : AppCompatActivity() {
             sqlitedb.close()
 
             val intent = Intent(this, TodoList::class.java)
+            intent.putExtra("UserID",userID)
             intent.putExtra("intent_PJ_name",str_name)
             intent.putExtra("intent_PJ_date",str_date)
             intent.putExtra("date_interval",interval)

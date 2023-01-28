@@ -39,10 +39,13 @@ class TodoList() : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.todo_list)
 
+        var userID : String = intent.getStringExtra("UserID").toString()
+
         //pjname = findViewById(R.id.project_name3)
         back = findViewById(R.id.back)
         back.setOnClickListener{
             val intent = Intent(this, TodayProject::class.java)
+            intent.putExtra("UserID",userID)
             startActivity(intent)
         }
 
@@ -95,7 +98,7 @@ class TodoList() : AppCompatActivity(){
 
                 var pjdo:TextView=TextView(this)
                 pjdo.text = "해야할 일"
-                pjdo.width = 260
+                pjdo.width = 250
                 pjdo.setTextColor(Color.BLACK)
                 pjdo.setBackgroundResource(R.drawable.list_stroke)
                 pjdo.setPadding(8,15,0,15)
@@ -123,9 +126,10 @@ class TodoList() : AppCompatActivity(){
                 layout_1.addView(add)
 
                 var pjmanager: TextView = TextView(this)
+                pjmanager.width = 60
                 pjmanager.text = "담당자"
                 pjmanager.setBackgroundColor(Color.parseColor("#EAEAEA"))
-                pjmanager.setPadding(5,15,15,15)
+                pjmanager.setPadding(10,15,0,15)
                 pjmanager.setTextColor(Color.BLUE)
                 layout_2.addView(pjmanager)
 
@@ -165,6 +169,7 @@ class TodoList() : AppCompatActivity(){
                     dbManager.close()
 
                     val intent = Intent(this, TodayProject::class.java)
+                    intent.putExtra("UserID",userID)
                     startActivity(intent)
                 })
                 .setNegativeButton("아니오",DialogInterface.OnClickListener{dialog, which->

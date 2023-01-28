@@ -22,6 +22,7 @@ class TodayProject : AppCompatActivity() {
     lateinit var auth: FirebaseAuth
     lateinit var Nolist: TextView
     lateinit var addProject : ImageButton
+    lateinit var ID : TextView
 
     lateinit var dbManager: DBManager
     lateinit var sqlitedb : SQLiteDatabase
@@ -36,6 +37,10 @@ class TodayProject : AppCompatActivity() {
         Nolist = findViewById(R.id.Nolist_tv)
         auth = FirebaseAuth.getInstance()
         addProject = findViewById(R.id.AddList_btn)
+        ID = findViewById(R.id.UserName)
+
+        var userID : String = intent.getStringExtra("UserID").toString()
+        ID.setText(userID + " 님")
 
         dbManager = DBManager(this, "projectlist_DB", null, 1)
         sqlitedb = dbManager.readableDatabase
@@ -74,6 +79,7 @@ class TodayProject : AppCompatActivity() {
                 intent.putExtra("intent_PJ_name", str_name)
                 intent.putExtra("intent_PJ_date", str_date)
                 intent.putExtra("date_interval",str_mem)
+                intent.putExtra("UserID",userID)
                 startActivity(intent)
             }
             layout_semi.addView(detail)
@@ -97,6 +103,7 @@ class TodayProject : AppCompatActivity() {
 
         addProject.setOnClickListener {
             val intent = Intent(this, AddProject_name::class.java)
+            intent.putExtra("UserID",userID)
             startActivity(intent)
         }
 

@@ -1,6 +1,5 @@
 package com.example.teamgo.Recomand
 
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,15 +8,16 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import net.flow9.thisisKotlin.firebase.R
+import java.util.Locale.Category
 
-class ExpandableAdapter(
-    private val personList: List<Person>
-) : RecyclerView.Adapter<ExpandableAdapter.MyViewHolder>() {
+class CategoryAdapter(
+    private val personList: List<category>
+) : RecyclerView.Adapter<CategoryAdapter.MyViewHolder>() {
 
     class MyViewHolder(
         itemView: View
     ) : RecyclerView.ViewHolder(itemView) {
-        fun bind(person: Person) {
+        fun bind(person: category) {
             val txtName = itemView.findViewById<TextView>(R.id.txt_name)
             val imgMore = itemView.findViewById<ImageButton>(R.id.img_more)
             val layoutExpand = itemView.findViewById<LinearLayout>(R.id.layout_expand)

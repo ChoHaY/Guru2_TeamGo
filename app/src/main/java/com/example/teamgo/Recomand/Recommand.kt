@@ -2,21 +2,18 @@ package com.example.teamgo.Recomand
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.ImageButton
-import android.widget.LinearLayout
-import android.widget.TextView
 import net.flow9.thisisKotlin.firebase.R
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.teamgo.TodayProject
+import kotlin.collections.ArrayList
 
 class Recommand : AppCompatActivity() {
-    private lateinit var personList: List<Person>
-    private lateinit var adapter: ExpandableAdapter
+    private lateinit var personList: List<category>
+    private lateinit var adapter: CategoryAdapter
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,7 +27,7 @@ class Recommand : AppCompatActivity() {
 
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        adapter = ExpandableAdapter(personList)
+        adapter = CategoryAdapter(personList)
         recyclerView.adapter = adapter
 
         ///////////////////////////////////////////////////////////////////////
@@ -41,13 +38,14 @@ class Recommand : AppCompatActivity() {
         }
         var recommand: ImageButton = findViewById(R.id.Recommand_btn)
         recommand.isEnabled = false
+        ////////////////////////////////////////////////////////////////////////
     }
-    private fun loadData(): List<Person> {
-        val people = ArrayList<Person>()
+    private fun loadData(): List<category> {
+        val people = ArrayList<category>()
         val persons = resources.getStringArray(R.array.pj_name)
 
         for (i in persons.indices) {
-            val person = Person().apply {
+            val person = category().apply {
                 name = persons[i]
             }
             people.add(person)
