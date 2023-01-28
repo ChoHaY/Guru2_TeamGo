@@ -41,9 +41,6 @@ class WriteMemo(context: Context) {
             dialog.dismiss()
         }
 
-
-
-
     }
     interface OnDialogClickListener {
         fun onClicked(name: String)
