@@ -8,15 +8,10 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import net.flow9.thisisKotlin.firebase.R
-import java.util.Locale.Category
 
-class CategoryAdapter(
-    private val personList: List<category>
-) : RecyclerView.Adapter<CategoryAdapter.MyViewHolder>() {
+class CategoryAdapter( private val personList: List<category>) : RecyclerView.Adapter<CategoryAdapter.MyViewHolder>() {
 
-    class MyViewHolder(
-        itemView: View
-    ) : RecyclerView.ViewHolder(itemView) {
+    class MyViewHolder( itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(person: category) {
             val txtName = itemView.findViewById<TextView>(R.id.txt_name)
             val imgMore = itemView.findViewById<ImageButton>(R.id.img_more)
@@ -39,17 +34,13 @@ class CategoryAdapter(
             return isExpanded
         }
     }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        return MyViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.recommand_item, parent, false))
+        return MyViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.recommand_cate, parent, false))
     }
-
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.bind(personList[position])
     }
-
     override fun getItemCount(): Int {
         return personList.size
     }
-
 }

@@ -14,8 +14,9 @@ import kotlin.collections.ArrayList
 
 class Recommand : AppCompatActivity() {
     lateinit var ID : TextView
-    private lateinit var personList: List<category>
-    private lateinit var adapter: CategoryAdapter
+
+    private lateinit var personList: List<category> //Category.kt
+    private lateinit var adapter: CategoryAdapter   //CategoryAdapter.kt
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,9 +24,10 @@ class Recommand : AppCompatActivity() {
         setContentView(R.layout.recommand)
 
         ID = findViewById(R.id.UserName)
-
         var userID : String = intent.getStringExtra("UserID").toString()
         ID.setText(userID + " 님")
+
+        /********************************************************************/
 
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_list)
 
@@ -38,6 +40,7 @@ class Recommand : AppCompatActivity() {
         recyclerView.adapter = adapter
 
         ///////////////////////////////////////////////////////////////////////
+
         var gohome: ImageButton = findViewById(R.id.Home_btn)
         gohome.setOnClickListener {
             val intent = Intent(this, TodayProject::class.java)
@@ -46,6 +49,7 @@ class Recommand : AppCompatActivity() {
         }
         var recommand: ImageButton = findViewById(R.id.Recommand_btn)
         recommand.isEnabled = false
+
         ////////////////////////////////////////////////////////////////////////
     }
     private fun loadData(): List<category> {
