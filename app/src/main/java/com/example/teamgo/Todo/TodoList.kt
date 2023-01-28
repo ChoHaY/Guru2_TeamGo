@@ -130,7 +130,7 @@ class TodoList() : AppCompatActivity(){
                 pjmanager.text = "담당자"
                 pjmanager.setBackgroundColor(Color.parseColor("#EAEAEA"))
                 pjmanager.setPadding(10,15,0,15)
-                pjmanager.setTextColor(Color.BLUE)
+                pjmanager.setTextColor(Color.BLACK)
                 layout_2.addView(pjmanager)
 
 

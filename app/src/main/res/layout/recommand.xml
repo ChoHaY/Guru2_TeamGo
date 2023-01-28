@@ -17,7 +17,7 @@
         android:fontFamily="@font/gmarketsansttfmedium"
         android:text="이렇게 진행해보세요!"
         android:textColor="@color/black"
-        android:textSize="25sp"
+        android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="4dp"
         android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -45,7 +45,7 @@
         app:layout_constraintEnd_toStartOf="@+id/Recommand_btn"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/vec_home"
-        app:tint="#FFD9D9D9"/>
+        app:tint="#D5E1FF"/>
 
     <TextView
         android:id="@+id/Home_btn_tv"
@@ -69,7 +69,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Home_btn"
         app:srcCompat="@drawable/vec_recommand"
-        app:tint="@color/black"/>
+        app:tint="@color/mainBlue"/>
 
     <TextView
         android:id="@+id/Recommand_btn_tv"
@@ -80,7 +80,8 @@
         android:fontFamily="@font/gmarketsansttfmedium"
         android:text="recommand"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/black"/>
 
     <TextView
         android:id="@+id/textView"
@@ -90,6 +91,8 @@
         android:layout_marginTop="12dp"
         android:fontFamily="@font/gmarketsansttfmedium"
         android:text="팀 프로젝트 진행 프로세스를 추천해드려요."
+        android:textSize="17sp"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

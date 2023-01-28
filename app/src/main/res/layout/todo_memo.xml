@@ -53,20 +53,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="@color/white"
+                android:backgroundTint="@color/mainBlue"
                 android:text="취소"
+                android:textSize="20dp"
                 android:fontFamily="@font/gmarketsansttfmedium"
-                android:textColor="#808080" />
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/finish_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="@color/white"
+                android:backgroundTint="@color/mainBlue"
                 android:text="추가"
+                android:textSize="20dp"
                 android:fontFamily="@font/gmarketsansttfmedium"
-                android:textColor="@color/mainBlue" />
+                android:textColor="@color/white" />
 
         </LinearLayout>
 

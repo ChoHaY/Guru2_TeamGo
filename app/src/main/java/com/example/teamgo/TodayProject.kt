@@ -90,6 +90,8 @@ class TodayProject : AppCompatActivity() {
             pjDate.text = str_date
             pjDate.textSize = 15f
             pjDate.setPadding(0, 0, 0, 30)
+            pjDate.setBackgroundResource(R.drawable.line)
+            pjDate.setTextColor(Color.BLACK)
             layout_item.addView(pjDate)
 
             Nolist.visibility = View.GONE
