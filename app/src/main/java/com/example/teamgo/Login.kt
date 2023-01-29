@@ -3,6 +3,8 @@ package com.example.teamgo
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
@@ -70,7 +72,9 @@ class Login : AppCompatActivity() {
             intent.putExtra("UserID",savedID)
             startActivity(intent)
             finish()
-            Toast.makeText(this, "자동 로그인", Toast.LENGTH_SHORT).show()
+           Handler(Looper.getMainLooper()).postDelayed({
+               Toast.makeText(this, "자동 로그인", Toast.LENGTH_SHORT).show()
+           },500)
         }
     }
     fun login(Email: String, Password: String) {
