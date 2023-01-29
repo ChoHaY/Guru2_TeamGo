@@ -37,38 +37,11 @@ class Login : AppCompatActivity() {
 
         val pref = getSharedPreferences("LoginInfo", 0)
         val savedID = pref.getString("ID","").toString()
+        val savedEmail = pref.getString("Email","").toString()
+        val savedPassword = pref.getString("Password","").toString()
         val savedC =pref.getBoolean("BOX",false)
 
-        Loginbtn.setOnClickListener {
-            var ID = putID.text.toString()
-            var CheckBox = check.isChecked()
-            var Email = putEmail.text.toString()
-            var Password = putPassword.text.toString()
-
-            auth.createUserWithEmailAndPassword(Email,Password)
-                .addOnCompleteListener { result ->
-                    if (result.isSuccessful) {
-                        if (auth.currentUser != null) {
-                            saveDate(ID,CheckBox)
-                            Toast.makeText(this, "회원가입 완료", Toast.LENGTH_SHORT).show()
-                            var intent = Intent(this, TodayProject::class.java)
-                            intent.putExtra("UserID",savedID)
-                            startActivity(intent)}
-                        } else if (result.exception?.message.isNullOrEmpty()) {
-                            Toast.makeText(this, "오류가 발생", Toast.LENGTH_SHORT).show()
-                        } else {
-                            saveDate(ID,CheckBox)
-                            Toast.makeText(this, "로그인 완료", Toast.LENGTH_SHORT).show()
-                            login(Email.toString(), Password.toString())
-                            var intent = Intent(this, TodayProject::class.java)
-                            intent.putExtra("UserID",savedID)
-                            startActivity(intent)
-                        }
-
-            }
-        }
-
-       if(savedC == true){
+        if(savedC == true){
             val intent: Intent = Intent(applicationContext, TodayProject::class.java)
             intent.putExtra("UserID",savedID)
             startActivity(intent)
@@ -77,22 +50,40 @@ class Login : AppCompatActivity() {
                Toast.makeText(this, "자동 로그인", Toast.LENGTH_SHORT).show()
            },500)
         }
-    }
-    fun login(Email: String, Password: String) {
-        auth.signInWithEmailAndPassword(Email, Password) // 로그인
-             .addOnCompleteListener { result ->
-              if (result.isSuccessful) {
-                  Toast.makeText(this, "로그인 완료", Toast.LENGTH_SHORT).show()
-                  var intent = Intent(this, TodayProject::class.java)
-                  startActivity(intent)
-              }
+
+        Loginbtn.setOnClickListener {
+
+            var ID = putID.text.toString()
+            var Email = putEmail.text.toString()
+            var Password = putPassword.text.toString()
+            var CheckBox = check.isChecked()
+
+            if( savedID != ID && savedEmail != Email && savedPassword != Password && savedC == false ) {
+                saveDate(ID,Email,Password,CheckBox)
+                val intent: Intent = Intent(applicationContext, TodayProject::class.java)
+                intent.putExtra("UserID",savedID)
+                startActivity(intent)
+                Toast.makeText(this, "회원가입 완료", Toast.LENGTH_SHORT).show()
+
+            } else if (savedID == ID && savedEmail == Email && savedPassword == Password && savedC == false){
+                saveDate(ID,Email,Password,CheckBox)
+                val intent: Intent = Intent(applicationContext, TodayProject::class.java)
+                intent.putExtra("UserID",savedID)
+                startActivity(intent)
+                Toast.makeText(this, "로그인 완료", Toast.LENGTH_SHORT).show()
+
+            } else /*if (savedID != ID || savedEmail != Email || savedPassword != Password ) */{
+                Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show()
+            }
         }
     }
-    fun saveDate( loginID :String, checkBox:Boolean ){
+    fun saveDate( loginID: String, email: String, password: String ,checkBox: Boolean ){
         val pref =getSharedPreferences("LoginInfo", MODE_PRIVATE) //shared key 설정
         val edit = pref.edit() // 수정모드
 
-        edit.putString("ID", loginID) // 값 넣기
+        edit.putString("ID", loginID)
+        edit.putString("Email", email)
+        edit.putString("Password", password)
         edit.putBoolean("BOX", checkBox)
 
         edit.apply() // 적용하기
