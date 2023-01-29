@@ -16,6 +16,7 @@ import com.example.teamgo.Recomand.Recommand
 import com.example.teamgo.Todo.TodoList
 import com.google.firebase.auth.FirebaseAuth
 import net.flow9.thisisKotlin.firebase.R
+import net.flow9.thisisKotlin.firebase.R.drawable.line
 
 class TodayProject : AppCompatActivity() {
 
@@ -90,10 +91,10 @@ class TodayProject : AppCompatActivity() {
             pjDate.text = str_date
             pjDate.textSize = 15f
             pjDate.setPadding(0, 0, 0, 30)
-            pjDate.setBackgroundResource(R.drawable.line)
+
             pjDate.setTextColor(Color.BLACK)
             layout_item.addView(pjDate)
-
+            pjDate.setBackgroundResource(R.drawable.line)
             Nolist.visibility = View.GONE
             layout.addView(layout_item)
             num1++
