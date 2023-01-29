@@ -10,15 +10,14 @@ import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.auth.FirebaseAuth
-import net.flow9.thisisKotlin.firebase.R
+
+
 import java.util.*
 
 class Login : AppCompatActivity() {
     lateinit var putEmail: EditText
     lateinit var putPassword: EditText
     lateinit var Loginbtn: Button
-    lateinit var auth: FirebaseAuth
     lateinit var putID: EditText
     lateinit var check: CheckBox
 
@@ -27,7 +26,6 @@ class Login : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login)
 
-        auth = FirebaseAuth.getInstance()
 
         putEmail = findViewById(R.id.InputID)
         putPassword = findViewById(R.id.InputPassword)

@@ -14,13 +14,12 @@ import androidx.annotation.RequiresApi
 import com.example.teamgo.AddProject.AddProject_name
 import com.example.teamgo.Recomand.Recommand
 import com.example.teamgo.Todo.TodoList
-import com.google.firebase.auth.FirebaseAuth
-import net.flow9.thisisKotlin.firebase.R
-import net.flow9.thisisKotlin.firebase.R.drawable.line
+
+
 
 class TodayProject : AppCompatActivity() {
 
-    lateinit var auth: FirebaseAuth
+
     lateinit var Nolist: TextView
     lateinit var addProject : ImageButton
     lateinit var ID : TextView
@@ -36,7 +35,6 @@ class TodayProject : AppCompatActivity() {
         setContentView(R.layout.today_project)
 
         Nolist = findViewById(R.id.Nolist_tv)
-        auth = FirebaseAuth.getInstance()
         addProject = findViewById(R.id.AddList_btn)
         ID = findViewById(R.id.UserName)
 

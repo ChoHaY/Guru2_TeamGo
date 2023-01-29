@@ -7,7 +7,8 @@ import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import net.flow9.thisisKotlin.firebase.R
+import com.example.teamgo.R
+
 
 class CategoryAdapter( private val personList: List<category>) : RecyclerView.Adapter<CategoryAdapter.MyViewHolder>() {
 

@@ -15,12 +15,10 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
-import androidx.core.view.marginBottom
-import androidx.core.view.setPadding
-import com.example.teamgo.BottomSheet
 import com.example.teamgo.DBManager
+import com.example.teamgo.R
 import com.example.teamgo.TodayProject
-import net.flow9.thisisKotlin.firebase.R
+
 
 class TodoList() : AppCompatActivity(){
 
@@ -104,11 +102,6 @@ class TodoList() : AppCompatActivity(){
                 pjdo.setPadding(15,15,0,15)
                 layout_item.setPadding(0,0,0,40)
                 layout_2.addView(pjdo)
-
-                pjdo.setOnClickListener{
-                    val bottomSheet = BottomSheet(this)
-                    bottomSheet.show(supportFragmentManager, bottomSheet.tag)
-                }
 
                 pjdo.setOnClickListener {
                     val dialog = WriteMemo(this)

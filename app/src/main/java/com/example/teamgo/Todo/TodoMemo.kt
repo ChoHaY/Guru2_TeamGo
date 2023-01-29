@@ -6,7 +6,7 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.view.WindowManager
 import android.widget.EditText
-import net.flow9.thisisKotlin.firebase.R
+import com.example.teamgo.R
 import kotlinx.android.synthetic.main.todo_memo.*
 
 class TodoMemo(context: Context) {

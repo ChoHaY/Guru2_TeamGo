@@ -7,9 +7,9 @@ import android.graphics.drawable.ColorDrawable
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
-import kotlinx.android.synthetic.main.todo_bottom_sheet.*
+import com.example.teamgo.R
 import kotlinx.android.synthetic.main.todo_writememo.*
-import net.flow9.thisisKotlin.firebase.R
+
 
 class WriteMemo(context: Context) {
 

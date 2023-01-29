@@ -14,9 +14,10 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import com.example.teamgo.DBManager
+import com.example.teamgo.R
 import com.example.teamgo.Todo.TodoList
 import com.google.android.material.datepicker.MaterialDatePicker
-import net.flow9.thisisKotlin.firebase.R
+
 import java.util.*
 
 class AddProject_date : AppCompatActivity() {

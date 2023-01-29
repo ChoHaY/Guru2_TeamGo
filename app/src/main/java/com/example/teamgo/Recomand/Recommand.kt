@@ -6,9 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.TextView
-import net.flow9.thisisKotlin.firebase.R
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.teamgo.R
 import com.example.teamgo.TodayProject
 import kotlin.collections.ArrayList
 
