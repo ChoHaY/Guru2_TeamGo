@@ -52,17 +52,16 @@ class Login : AppCompatActivity() {
                             var intent = Intent(this, TodayProject::class.java)
                             intent.putExtra("UserID",savedID)
                             startActivity(intent)}
-                        } else if (result.exception?.message.isNullOrEmpty()) {
-                            Toast.makeText(this, "오류가 발생", Toast.LENGTH_SHORT).show()
-                        } else {
-                            saveDate(ID,CheckBox)
-                            Toast.makeText(this, "로그인 완료", Toast.LENGTH_SHORT).show()
-                            login(Email.toString(), Password.toString())
-                            var intent = Intent(this, TodayProject::class.java)
-                            intent.putExtra("UserID",savedID)
-                            startActivity(intent)
-                        }
-
+                    } else if (result.exception?.message.isNullOrEmpty()) {
+                        Toast.makeText(this, "오류가 발생", Toast.LENGTH_SHORT).show()
+                    } else {
+                        saveDate(ID,CheckBox)
+                        Toast.makeText(this, "로그인 완료", Toast.LENGTH_SHORT).show()
+                        login(Email.toString(), Password.toString())
+                        var intent = Intent(this, TodayProject::class.java)
+                        intent.putExtra("UserID",savedID)
+                        startActivity(intent)
+                    }
             }
         }
 
