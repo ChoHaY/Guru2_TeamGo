@@ -43,6 +43,7 @@ class Recommand : AppCompatActivity() {
 
         var gohome: ImageButton = findViewById(R.id.Home_btn)
         gohome.setOnClickListener {
+
             startActivity(intent)
             overridePendingTransition(0, 0)
             val intent = Intent(this, TodayProject::class.java)
