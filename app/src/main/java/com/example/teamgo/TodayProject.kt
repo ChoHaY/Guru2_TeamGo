@@ -115,6 +115,8 @@ class TodayProject : AppCompatActivity() {
 
         var recommand: ImageButton = findViewById(R.id.Recommand_btn)
         recommand.setOnClickListener{
+            startActivity(intent)
+            overridePendingTransition(0, 0)
             val intent = Intent(this, Recommand::class.java)
             intent.putExtra("UserID",userID)
             startActivity(intent)
