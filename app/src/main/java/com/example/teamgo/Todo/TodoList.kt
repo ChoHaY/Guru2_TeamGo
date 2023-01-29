@@ -101,7 +101,7 @@ class TodoList() : AppCompatActivity(){
                 pjdo.width = 250
                 pjdo.setTextColor(Color.BLACK)
                 pjdo.setBackgroundResource(R.drawable.list_stroke)
-                pjdo.setPadding(8,15,0,15)
+                pjdo.setPadding(15,15,0,15)
                 layout_item.setPadding(0,0,0,40)
                 layout_2.addView(pjdo)
 
@@ -140,6 +140,7 @@ class TodoList() : AppCompatActivity(){
                 pjmanager.width = 60
                 pjmanager.text = "담당자"
                 pjmanager.setBackgroundColor(Color.parseColor("#EAEAEA"))
+                pjmanager.setBackgroundResource(R.drawable.manager_back)
                 pjmanager.setPadding(10,15,0,15)
                 pjmanager.setTextColor(Color.BLACK)
                 layout_2.addView(pjmanager)
