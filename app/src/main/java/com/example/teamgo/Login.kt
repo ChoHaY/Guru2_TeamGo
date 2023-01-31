@@ -24,7 +24,7 @@ class Login : AppCompatActivity() {
         setContentView(R.layout.login)
 
         putID = findViewById(R.id.InputID)
-        putEmail = findViewById(R.id.InputID)
+        putEmail = findViewById(R.id.InputEmail)
         putPassword = findViewById(R.id.InputPassword)
         check = findViewById(R.id.AuthLogin_check)
         loginbtn = findViewById(R.id.Login_btn)
@@ -35,18 +35,6 @@ class Login : AppCompatActivity() {
         val savedEmail = pref.getString("Email","").toString()
         val savedPassword = pref.getString("Password","").toString()
         val savedC =pref.getBoolean("BOX",false)
-
-        // 이전에 자동로그인 박스를 체크했을 경우
-        if(savedC == true){
-            val intent: Intent = Intent(applicationContext, TodayProject::class.java)
-            intent.putExtra("UserID",savedID)
-            startActivity(intent)
-            finish()
-            // 토스트 메시지 시작 시간 조정
-            Handler(Looper.getMainLooper()).postDelayed({
-                Toast.makeText(this, "자동 로그인", Toast.LENGTH_SHORT).show()
-            },200)
-        }
 
         loginbtn.setOnClickListener {
 
@@ -72,6 +60,18 @@ class Login : AppCompatActivity() {
             // 잘못된 정보 => 로그인 실패
             else {
                 Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show() }
+                saveDate(ID,Email,Password,CheckBox)
+        }
+        // 이전에 자동로그인 박스를 체크했을 경우
+        if(savedC == true){
+            val intent: Intent = Intent(applicationContext, TodayProject::class.java)
+            intent.putExtra("UserID",savedID)
+            startActivity(intent)
+            finish()
+            // 토스트 메시지 시작 시간 조정
+            Handler(Looper.getMainLooper()).postDelayed({
+                Toast.makeText(this, "자동 로그인", Toast.LENGTH_SHORT).show()
+            },200)
         }
     }
     // SharedPreferences 를 이용한 데이터 저장
