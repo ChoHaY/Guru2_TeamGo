@@ -63,7 +63,7 @@ class Login : AppCompatActivity() {
                 startActivity(intent)
                 Toast.makeText(this, "회원가입 완료", Toast.LENGTH_SHORT).show() }
             // 이미 회원가입된 정보 => 로그인
-            else if (savedID == ID && savedEmail == Email && savedPassword == Password && savedC == false){
+            else if (savedID == ID && savedEmail == Email && savedPassword == Password && savedC ==false){
                 saveDate(ID,Email,Password,CheckBox)
                 val intent: Intent = Intent(applicationContext, TodayProject::class.java)
                 intent.putExtra("UserID",savedID)
