@@ -36,7 +36,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Login_logo_tv" />
 
     <EditText
-        android:id="@+id/inputEmail"
+        android:id="@+id/InputEmail"
         android:layout_width="325dp"
         android:layout_height="44dp"
         android:layout_marginStart="10dp"
@@ -65,7 +65,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/InputEmail" />
 
     <CheckBox
         android:id="@+id/AuthLogin_check"
@@ -110,5 +110,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

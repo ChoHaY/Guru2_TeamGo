@@ -8,9 +8,6 @@ import android.view.WindowManager
 import android.widget.EditText
 import com.example.teamgo.R
 import kotlinx.android.synthetic.main.todo_writemanager.*
-import kotlinx.android.synthetic.main.todo_writememo.*
-
-
 
 class WriteManager(context: Context) {
 
@@ -20,7 +17,6 @@ class WriteManager(context: Context) {
     fun setOnClickListener(listener: OnDialogClickListener) {
         onClickListener = listener
     }
-
     fun showDialog() {
         dialog.setContentView(R.layout.todo_writemanager)
         dialog.window!!.setLayout(
@@ -32,24 +28,17 @@ class WriteManager(context: Context) {
         dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog.show()
 
-        val edit_name3 = dialog.findViewById<EditText>(R.id.name_edit3)
+        val edit_name3 = dialog.findViewById<EditText>(R.id.Manager_Name_ev)
 
-        dialog.cancel_button3.setOnClickListener {
+        dialog.Cancel_btn2.setOnClickListener {
             dialog.dismiss()
         }
-
-        dialog.finish_button3.setOnClickListener {
+        dialog.Finish_btn2.setOnClickListener {
             onClickListener.onClicked(edit_name3.text.toString())
             dialog.dismiss()
         }
-
-
-
-
     }
     interface OnDialogClickListener {
         fun onClicked(name: String)
-
-
     }
 }

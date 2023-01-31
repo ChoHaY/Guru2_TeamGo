@@ -7,21 +7,19 @@ import android.os.Handler
 import android.os.Looper
 import android.view.WindowManager
 
-
 class Splash : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN)
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.splash)
 
-        setContentView(R.layout.a_splash)
+        // FullScreen
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
-        // 일정 시간 후 실행 함수
+        // 2초 후 로그인 화면으로 이동
         Handler(Looper.getMainLooper()).postDelayed({
-
-            // 2초 후 로그인 화면으로 이동
             val intent = Intent(this, Login::class.java)
             startActivity(intent)
-            overridePendingTransition(com.google.android.material.R.anim.abc_fade_in, com.google.android.material.R.anim.abc_fade_out)
+            overridePendingTransition(com.google.android.material.R.anim.abc_fade_in, com.google.android.material.R.anim.abc_fade_out) // 화면전환
             finish()
         } ,2000)
     }

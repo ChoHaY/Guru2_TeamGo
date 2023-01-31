@@ -6,14 +6,14 @@
     android:layout_height="match_parent">
 
     <ImageButton
-        android:id="@+id/back"
+        android:id="@+id/Back_btn3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="282dp"
         android:backgroundTint="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/project_name3"
+        app:layout_constraintBottom_toTopOf="@+id/Project_Name_tv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,17 +31,17 @@
         android:layout_marginEnd="26dp"
         android:layout_marginBottom="32dp"
         android:background="#00FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/project_name3"
+        app:layout_constraintBottom_toTopOf="@+id/Project_Name_tv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/back"
+        app:layout_constraintStart_toEndOf="@+id/Back_btn3"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/vec_delet"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/project_name3"
+        android:id="@+id/Project_Name_tv"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
@@ -49,28 +49,28 @@
         android:layout_marginEnd="190dp"
         android:textSize="25sp"
         android:fontFamily="@font/gmarketsansttfmedium"
-        app:layout_constraintBottom_toTopOf="@+id/allday"
+        app:layout_constraintBottom_toTopOf="@+id/Project_date_tv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/allday"
+        android:id="@+id/Project_date_tv"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
         android:layout_marginBottom="6dp"
         android:textSize="14sp"
         android:fontFamily="@font/gmarketsansttfmedium"
-        app:layout_constraintBottom_toTopOf="@+id/Member"
+        app:layout_constraintBottom_toTopOf="@+id/Member_tv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/project_name3" />
+        app:layout_constraintTop_toBottomOf="@+id/Project_Name_tv" />
 
     <TextView
-        android:id="@+id/Member"
+        android:id="@+id/Member_tv"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:background="@drawable/radius"
@@ -83,7 +83,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.122"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/allday" />
+        app:layout_constraintTop_toBottomOf="@+id/Project_date_tv" />
 
     <ScrollView
         android:id="@+id/scrollView3"
@@ -111,7 +111,7 @@
     </ScrollView>
 
     <ImageButton
-        android:id="@+id/invitation_btn"
+        android:id="@+id/Invitation_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -121,8 +121,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.355"
-        app:layout_constraintStart_toStartOf="@+id/Member"
-        app:layout_constraintTop_toBottomOf="@+id/allday"
+        app:layout_constraintStart_toStartOf="@+id/Member_tv"
+        app:layout_constraintTop_toBottomOf="@+id/Project_date_tv"
         app:layout_constraintVertical_bias="0.026"
         app:srcCompat="@drawable/ic_baseline_person_add_24"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />

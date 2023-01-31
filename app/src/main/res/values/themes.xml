@@ -9,5 +9,4 @@
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowAnimationStyle">@null</item>
     </style>
-
 </resources>

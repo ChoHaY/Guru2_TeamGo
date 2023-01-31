@@ -13,50 +13,52 @@ import android.widget.ImageButton
 import com.example.teamgo.R
 import com.example.teamgo.TodayProject
 
-
 class AddProject_name : AppCompatActivity() {
 
-    lateinit var Backbtn : ImageButton
-    lateinit var Nextbtn : Button
-    lateinit var RegName : EditText
+    lateinit var backbtn : ImageButton
+    lateinit var regname : EditText
+    lateinit var nextbtn : Button
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.add_project_name)
 
-        Backbtn = findViewById(R.id.Back_btn)
-        RegName = findViewById(R.id.InputName)
-        Nextbtn = findViewById(R.id.Next_btn)
-        Nextbtn.isEnabled = false
+        backbtn = findViewById(R.id.Back_btn)
+        regname = findViewById(R.id.InputName)
+        nextbtn = findViewById(R.id.Next_btn)
+        nextbtn.isEnabled = false
 
         var userID : String = intent.getStringExtra("UserID").toString()
 
-        Backbtn.setOnClickListener {
+        // 뒤로가기 버튼
+        backbtn.setOnClickListener {
             val intent = Intent(this, TodayProject::class.java)
             intent.putExtra("UserID",userID)
             startActivity(intent)
         }
 
-        RegName.addTextChangedListener(object : TextWatcher{
+        // 프로젝트 이름을 작성해야 '다음' 버튼 활성화
+        regname.addTextChangedListener(object : TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                if(RegName.length() > 0) {
-                    Nextbtn.isEnabled= true
-                    Nextbtn.setBackgroundColor(Color.parseColor("#215FFF"))
+                if(regname.length() > 0) {
+                    nextbtn.isEnabled= true
+                    nextbtn.setBackgroundColor(Color.parseColor("#215FFF"))
                 } else {
-                    Nextbtn.isEnabled= false
-                    Nextbtn.setBackgroundColor(Color.LTGRAY)
+                    nextbtn.isEnabled= false
+                    nextbtn.setBackgroundColor(Color.LTGRAY)
                 }
             }
             override fun afterTextChanged(p0: Editable?) {}
         })
 
-        Nextbtn.setOnClickListener {
+        // 프로젝트 이름 저장 후 기간 설정으로 이동
+        nextbtn.setOnClickListener {
             val intent = Intent(this, AddProject_date::class.java)
             intent.putExtra("UserID",userID)
-            intent.putExtra("name",RegName.text.toString())
+            intent.putExtra("name",regname.text.toString())
             startActivity(intent)
         }
     }

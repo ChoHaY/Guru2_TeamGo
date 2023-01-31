@@ -22,11 +22,11 @@ import java.util.*
 
 class AddProject_date : AppCompatActivity() {
 
-    lateinit var Backbtn: ImageButton
-    lateinit var DateView: EditText
-    lateinit var SelectDate: ImageButton
-    lateinit var Nextbtn : Button
+    lateinit var backbtn: ImageButton
+    lateinit var dateview: EditText
+    lateinit var selectdate: ImageButton
     lateinit var days : EditText
+    lateinit var nextbtn : Button
 
     lateinit var dbManager: DBManager
     lateinit var sqlitedb : SQLiteDatabase
@@ -36,53 +36,58 @@ class AddProject_date : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.add_project_date)
 
-        Backbtn = findViewById(R.id.Back_btn2)
-        DateView = findViewById(R.id.InputDate)
-        SelectDate = findViewById(R.id.SelectDate_btn)
-        days= findViewById(R.id.editview)
+        backbtn = findViewById(R.id.Back_btn2)
+        dateview = findViewById(R.id.InputDate)
+        selectdate = findViewById(R.id.SelectDate_btn)
+        days= findViewById(R.id.Gap_ev)
 
-        Backbtn.setOnClickListener {
+        backbtn.setOnClickListener {
             val intent = Intent(this, AddProject_name::class.java)
             startActivity(intent)
         }
 
-        SelectDate.setOnClickListener{
+        // MaterialDatePicker 이욯
+        selectdate.setOnClickListener{
+            // 달력 불러오기
             val datePicker = MaterialDatePicker.Builder.dateRangePicker().setTitleText("팀플 기간을 골라주세요").build()
             datePicker.show(supportFragmentManager, "DatePicker")
             datePicker.addOnPositiveButtonClickListener {
 
                 val calendar = Calendar.getInstance()
 
+                // 시작날짜 받아오기
                 calendar.timeInMillis = it?.first ?: 0
                 val startDate = SimpleDateFormat("yyyy.MM.dd").format(calendar.time).toString()
                 val first = calendar.timeInMillis
 
+                // 마지막날짜 받아오기
                 calendar.timeInMillis = it?.second ?: 0
                 val endDate = SimpleDateFormat("yyyy.MM.dd").format(calendar.time).toString()
                 val last = calendar.timeInMillis
 
+                // 두 날짜 차이값 받아오기
                 val gap1 = (last-first)/100000
                 val gap2 = gap1/(6*6*24*1)+1
-                DateView.setText("$startDate  ㅡ  $endDate")
+                dateview.setText("$startDate  ㅡ  $endDate")
                 days.setText("$gap2")
             }
         }
         days.visibility = View.INVISIBLE
-        ////////////////////////////////////////////////////////////////////////
 
-        Nextbtn = findViewById(R.id.Next_btn)
-        Nextbtn.isEnabled = false
+        nextbtn = findViewById(R.id.Next_btn)
+        nextbtn.isEnabled = false
 
-        DateView.addTextChangedListener(object : TextWatcher {
+        // 날짜 입력받으면 다음 버튼 활성화
+        dateview.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                if(DateView.length() > 0) {
-                    Nextbtn.isEnabled= true
-                    Nextbtn.setBackgroundColor(Color.parseColor("#215FFF"))
+                if(dateview.length() > 0) {
+                    nextbtn.isEnabled= true
+                    nextbtn.setBackgroundColor(Color.parseColor("#215FFF"))
                 } else {
-                    Nextbtn.isEnabled= false
-                    Nextbtn.setBackgroundColor(Color.LTGRAY)
+                    nextbtn.isEnabled= false
+                    nextbtn.setBackgroundColor(Color.LTGRAY)
                 }
             }
             override fun afterTextChanged(p0: Editable?) {}
@@ -91,9 +96,10 @@ class AddProject_date : AppCompatActivity() {
         dbManager = DBManager(this,"projectlist_DB", null, 1)
         var userID : String = intent.getStringExtra("UserID").toString()
 
-        Nextbtn.setOnClickListener {
+        // 이름과 날짜 데이터를 저장해 프로젝트 생성
+        nextbtn.setOnClickListener {
             var str_name : String = intent.getStringExtra("name").toString()
-            var str_date : String = DateView.text.toString()
+            var str_date : String = dateview.text.toString()
             var interval : String = days.text.toString()
 
             sqlitedb = dbManager.writableDatabase

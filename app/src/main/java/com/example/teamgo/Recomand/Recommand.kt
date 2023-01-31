@@ -14,9 +14,9 @@ import kotlin.collections.ArrayList
 
 class Recommand : AppCompatActivity() {
     lateinit var ID : TextView
-
-    private lateinit var personList: List<category> //Category.kt
-    private lateinit var adapter: CategoryAdapter   //CategoryAdapter.kt
+    lateinit var recyclerview: RecyclerView
+    private lateinit var pjlist: List<category> // 목록을 저장하는 공간
+    private lateinit var adapter: CategoryAdapter   // 어댑터
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,46 +24,41 @@ class Recommand : AppCompatActivity() {
         setContentView(R.layout.recommand)
 
         ID = findViewById(R.id.UserName)
+        recyclerview = findViewById(R.id.Reco_Recycler)
+
         var userID : String = intent.getStringExtra("UserID").toString()
         ID.setText(userID + " 님")
 
-        /********************************************************************/
+        // 저장된 데이터 리스트 받기
+        pjlist = ArrayList()
+        pjlist = loadData()
 
-        val recyclerView = findViewById<RecyclerView>(R.id.recycler_list)
-
-        personList = ArrayList()
-        personList = loadData()
-
-        recyclerView.setHasFixedSize(true)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        adapter = CategoryAdapter(personList)
-        recyclerView.adapter = adapter
-
-        ///////////////////////////////////////////////////////////////////////
+        recyclerview.setHasFixedSize(true)
+        recyclerview.layoutManager = LinearLayoutManager(this)
+        adapter = CategoryAdapter(pjlist)
+        recyclerview.adapter = adapter
 
         var gohome: ImageButton = findViewById(R.id.Home_btn)
         gohome.setOnClickListener {
-
             val intent = Intent(this, TodayProject::class.java)
             intent.putExtra("UserID",userID)
             startActivity(intent)
         }
-        var recommand: ImageButton = findViewById(R.id.Recommand_btn)
-        recommand.isEnabled = false
-
-        ////////////////////////////////////////////////////////////////////////
+        var gorecommand: ImageButton = findViewById(R.id.Recommand_btn)
+        gorecommand.isEnabled = false
     }
+    // 받은 데이터를 가져오는 함수
     private fun loadData(): List<category> {
-        val people = ArrayList<category>()
-        val persons = resources.getStringArray(R.array.pj_name)
+        val project = ArrayList<category>()
+        val projects = resources.getStringArray(R.array.pj_name)
 
-        for (i in persons.indices) {
+        for (i in projects.indices) {
             val person = category().apply {
-                name = persons[i]
+                cate = projects[i]
             }
-            people.add(person)
+            project.add(person)
         }
-        return people
+        return project
     }
 }
 

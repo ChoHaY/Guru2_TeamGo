@@ -14,11 +14,12 @@
         android:background="@color/white">
 
         <TextView
+            android:id="@+id/Edit_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:text="메모 수정"
             android:fontFamily="@font/gmarketsansttfmedium"
+            android:text="메모 수정"
             android:textColor="@android:color/black"
             android:textSize="30sp"
             android:textStyle="bold"
@@ -26,7 +27,7 @@
             tools:layout_editor_absoluteY="345dp" />
 
         <EditText
-            android:id="@+id/name_edit2"
+            android:id="@+id/Edit_Todo_ev"
             android:layout_width="250dp"
             android:layout_height="150dp"
             android:background="@android:color/transparent"
@@ -50,7 +51,7 @@
             >
 
             <Button
-                android:id="@+id/cancel_button2"
+                android:id="@+id/Cancel_btn3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -62,7 +63,7 @@
 
 
             <Button
-                android:id="@+id/finish_button2"
+                android:id="@+id/Finish_btn3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

@@ -9,20 +9,20 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.teamgo.R
 
-
-class CategoryAdapter( private val personList: List<category>) : RecyclerView.Adapter<CategoryAdapter.MyViewHolder>() {
+class CategoryAdapter( private val projectlist: List<category>) : RecyclerView.Adapter<CategoryAdapter.MyViewHolder>() {
 
     class MyViewHolder( itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(person: category) {
-            val txtName = itemView.findViewById<TextView>(R.id.txt_name)
-            val imgMore = itemView.findViewById<ImageButton>(R.id.img_more)
+        fun bind(project: category) {
+            val txtName = itemView.findViewById<TextView>(R.id.Pj_Cate_tv)
+            val imgMore = itemView.findViewById<ImageButton>(R.id.More_btn)
             val layoutExpand = itemView.findViewById<LinearLayout>(R.id.layout_expand)
 
-            txtName.text = person.name
+            txtName.text = project.cate
 
+            // 우측 버튼을 누르면 아래로 뷰 확장
             imgMore.setOnClickListener {
-                val show = toggleLayout(!person.isExpanded, it, layoutExpand)
-                person.isExpanded = show
+                val show = toggleLayout(!project.isExpanded, it, layoutExpand)
+                project.isExpanded = show
             }
         }
         private fun toggleLayout(isExpanded: Boolean, view: View, layoutExpand: LinearLayout): Boolean {
@@ -39,9 +39,9 @@ class CategoryAdapter( private val personList: List<category>) : RecyclerView.Ad
         return MyViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.recommand_cate, parent, false))
     }
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.bind(personList[position])
+        holder.bind(projectlist[position])
     }
     override fun getItemCount(): Int {
-        return personList.size
+        return projectlist.size
     }
 }

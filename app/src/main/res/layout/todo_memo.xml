@@ -14,12 +14,13 @@
         android:background="@color/white">
 
         <TextView
+            android:id="@+id/Todo_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:background="#FFFFFF"
-            android:text="할 일"
             android:fontFamily="@font/gmarketsansttfmedium"
+            android:text="할 일"
             android:textColor="@android:color/black"
             android:textSize="30sp"
             android:textStyle="bold"
@@ -27,7 +28,7 @@
             tools:layout_editor_absoluteY="345dp" />
 
         <EditText
-            android:id="@+id/name_edit"
+            android:id="@+id/Name_ev"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginLeft="16dp"
@@ -49,7 +50,7 @@
             tools:ignore="MissingConstraints">
 
             <Button
-                android:id="@+id/cancel_button"
+                android:id="@+id/Cancel_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -60,7 +61,7 @@
                 android:textColor="@color/white" />
 
             <Button
-                android:id="@+id/finish_button"
+                android:id="@+id/Add_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
